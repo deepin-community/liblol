@@ -1,15 +1,26 @@
-Source: template-repository
-Section: unknown
+Source: liblol
+Section: otherosfs
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Miao Wang <shankerwangmiao@gmail.com>
+Build-Depends: debhelper-compat (= 13),
+               libstdc++6,
+               quilt,
+               bison,
+               gawk,
+               python3,
+Standards-Version: 4.6.2
+Homepage: https://github.com/AOSC-Dev/liblol
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: liblol
+Architecture: loong64
+Multi-Arch: foreign
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         libstdc++6,
+         libc6 (>= 2.36),
+         libc6 (<< ${glibcVer}.1~),
+Conflicts: glibc,
+Recommends: liblol-dkms,
+Description: Compatibility layer for old world applications
+  This package contains a Compatibility layer for old world
+  applications on new world loongarch64 platform.
