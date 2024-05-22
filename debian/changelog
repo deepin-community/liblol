@@ -1,3 +1,19 @@
+liblol (0.1.5-1) unstable; urgency=medium
+
+  * Release 0.1.5-1
+
+ -- Miao Wang <shankerwangmiao@gmail.com>  Tue, 30 Apr 2024 22:55:00 +0800
+
+liblol (0.1.5~pre6-1) unstable; urgency=medium
+
+  * add ABI checking
+  * not promoting symbol versions of libnsl.so
+  * use libxcrypt for libcrypto.so.1
+  * fix wrong version mapping for libpthread symbols
+  * upgrade glibc to 2.39
+
+ -- Miao Wang <shankerwangmiao@gmail.com>  Mon, 18 Mar 2024 10:43:00 +0800
+
 liblol (0.1.4-1) unstable; urgency=medium
 
   * Release 0.1.4-1
