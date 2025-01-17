@@ -1,4 +1,4 @@
-# Copyright (C) 1991-2023 Free Software Foundation, Inc.
+# Copyright (C) 1991-2024 Free Software Foundation, Inc.
 # This file is part of the GNU C Library.
 
 # The GNU C Library is free software; you can redistribute it and/or
@@ -214,12 +214,18 @@ routines_no_fortify += \
   syslog \
   # routines_no_fortify
 
+ifeq ($(run-built-tests),yes)
+ifeq (yes,$(build-shared))
+ifneq ($(PERL),no)
 generated += \
   tst-allocate_once-mem.out \
   tst-allocate_once.mtrace \
   tst-error1-mem.out \
   tst-error1.mtrace \
   # generated
+endif
+endif
+endif
 
 aux := init-misc
 install-lib := libg.a
@@ -285,11 +291,20 @@ tests-internal += tst-fd_to_filename
 tests-static += tst-fd_to_filename
 
 ifeq ($(run-built-tests),yes)
-tests-special += $(objpfx)tst-error1-mem.out \
-  $(objpfx)tst-allocate_once-mem.out
+ifeq (yes,$(build-shared))
+ifneq ($(PERL),no)
+tests-special += \
+  $(objpfx)tst-allocate_once-mem.out \
+  $(objpfx)tst-error1-mem.out \
+  # tests-special
+endif
+endif
 endif
 
-tests-container := tst-syslog
+tests-container := \
+  tst-syslog \
+  tst-syslog-long-progname \
+  # tests-container
 
 CFLAGS-select.c += -fexceptions -fasynchronous-unwind-tables
 CFLAGS-tsearch.c += $(uses-callbacks)
@@ -350,6 +365,9 @@ tst-allocate_once-ENV = MALLOC_TRACE=$(objpfx)tst-allocate_once.mtrace \
 $(objpfx)tst-allocate_once-mem.out: $(objpfx)tst-allocate_once.out
 	$(common-objpfx)malloc/mtrace $(objpfx)tst-allocate_once.mtrace > $@; \
 	$(evaluate-test)
+
+tst-syslog-long-progname-ENV = GLIBC_TUNABLES=glibc.malloc.check=3 \
+			       LD_PRELOAD=libc_malloc_debug.so.0
 
 $(objpfx)tst-select: $(librt)
 $(objpfx)tst-select-time64: $(librt)
