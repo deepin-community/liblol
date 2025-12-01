@@ -1,3 +1,9 @@
+liblol (0.1.10-1deepin1) unstable; urgency=medium
+
+  * Build with GCC 12.
+
+ -- lichenggang <lichenggang@deepin.org>  Mon, 01 Dec 2025 15:16:36 +0800
+
 liblol (0.1.10-1) unstable; urgency=medium
 
   * Bump glibc version to 2.42.

@@ -36,7 +36,7 @@ NJOBS := -j $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 endif
 
 BASE_CC = gcc
-DEB_GCC_VERSION = -15
+DEB_GCC_VERSION = -12
 
 CC = $(DEB_HOST_GNU_TYPE)-$(BASE_CC)$(DEB_GCC_VERSION)
 BUILD_CC = $(DEB_BUILD_GNU_TYPE)-$(BASE_CC)
