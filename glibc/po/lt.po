@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libc-2.7\n"
-"POT-Creation-Date: 2024-07-21 00:32+0200\n"
+"POT-Creation-Date: 2025-07-19 22:21+0200\n"
 "PO-Revision-Date: 2009-02-12 05:24+0200\n"
 "Last-Translator: Gintautas Miliauskas <gintas@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
@@ -63,7 +63,7 @@ msgid "Give a short usage message"
 msgstr "Pateikti trumpą pranešimą apie naudojimą"
 
 #: argp/argp-parse.c:88 catgets/gencat.c:110 catgets/gencat.c:114
-#: iconv/iconv_prog.c:60 iconv/iconv_prog.c:61 nscd/nscd.c:106 nscd/nscd.c:110
+#: iconv/iconv_prog.c:61 iconv/iconv_prog.c:62 nscd/nscd.c:106 nscd/nscd.c:110
 #: nss/makedb.c:122
 msgid "NAME"
 msgstr "PAVADINIMAS"
@@ -89,9 +89,19 @@ msgstr "(PROGRAM ERROR) Nežinoma jokia versija!?"
 msgid "%s: Too many arguments\n"
 msgstr "%s: Per daug argumentų\n"
 
-#: argp/argp-parse.c:751
+#: argp/argp-parse.c:754
 msgid "(PROGRAM ERROR) Option should have been recognized!?"
 msgstr "(PROGRAM ERROR) Parametras turėjo būti atpažintas!?"
+
+#: assert/assert-perr.c:35
+#, c-format
+msgid "%s%s%s:%u: %s%sUnexpected error: %s.\n"
+msgstr "%s%s%s:%u: %s%sNetikėta klaida: %s.\n"
+
+#: assert/assert.c:127
+#, c-format
+msgid "%s%s%s:%u: %s%sAssertion `%s' failed.\n"
+msgstr "%s%s%s:%u: %s%sPrielaida „%s“ pažeista.\n"
 
 #: catgets/gencat.c:111
 msgid "Create C header file NAME containing symbol definitions"
@@ -113,8 +123,8 @@ msgstr ""
 "-o IŠVEDIMO-FAILAS [DUOMENŲ-FAILAS]...\n"
 "[IŠVEDIMO-FAILAS [DUOMENŲ-FAILAS]...]"
 
-#: catgets/gencat.c:251 debug/pcprofiledump.c:229 debug/xtrace.sh:67
-#: elf/ldconfig.c:238 elf/pldd.c:267 elf/sprof.c:394 iconv/iconv_prog.c:409
+#: catgets/gencat.c:251 debug/pcprofiledump.c:240 debug/xtrace.sh:67
+#: elf/ldconfig.c:237 elf/pldd.c:267 elf/sprof.c:394 iconv/iconv_prog.c:396
 #: iconv/iconvconfig.c:402 locale/programs/locale.c:297
 #: locale/programs/localedef.c:464 malloc/memusage.sh:74
 #: malloc/memusagestat.c:587 nscd/nscd.c:526 nss/getent.c:97 nss/makedb.c:392
@@ -182,15 +192,15 @@ msgstr "neužbaigtas pranešimas"
 msgid "[FILE]"
 msgstr "[FAILAS]"
 
-#: debug/pcprofiledump.c:107
-#, c-format
-msgid "cannot open input file"
-msgstr "nepavyko atverti įvedimo failo"
-
-#: debug/pcprofiledump.c:114
+#: debug/pcprofiledump.c:97
 #, c-format
 msgid "cannot read header"
 msgstr "nepavyko perskaityti antraštės"
+
+#: debug/pcprofiledump.c:145
+#, c-format
+msgid "cannot open input file"
+msgstr "nepavyko atverti įvedimo failo"
 
 #: debug/xtrace.sh:137
 msgid "No program name given\\n"
@@ -204,7 +214,7 @@ msgstr "nepalaikoma dlinfo užklausa"
 msgid "invalid mode"
 msgstr "netaisyklinga veiksena"
 
-#: elf/cache.c:296 elf/ldconfig.c:1239
+#: elf/cache.c:296 elf/ldconfig.c:1238
 #, c-format
 msgid "Can't open cache file %s\n"
 msgstr "Nepavyko atverti podėlio failo %s\n"
@@ -236,207 +246,207 @@ msgstr "bendrasis objektas neatvertas"
 msgid "DST not allowed in SUID/SGID programs"
 msgstr "DST neleidžiamas SUID/SGID programose"
 
-#: elf/dl-load.c:1067 elf/dl-load.c:1610 elf/dl-load.c:1718
+#: elf/dl-load.c:1090 elf/dl-load.c:1605 elf/dl-load.c:1711
 msgid "cannot read file data"
 msgstr "nepavyko nuskaityti failo duomenų"
 
-#: elf/dl-load.c:1212
+#: elf/dl-load.c:1235
 msgid "object file has no loadable segments"
 msgstr "objektiniame faile nėra įkeliamų segmentų"
 
-#: elf/dl-load.c:1236
+#: elf/dl-load.c:1259
 msgid "object file has no dynamic section"
 msgstr "objektiniame faile nėra dinaminės sekcijos"
 
-#: elf/dl-load.c:1273
+#: elf/dl-load.c:1296
 msgid "shared object cannot be dlopen()ed"
 msgstr "bendrasis objektas negali būti atvertas su dlopen()"
 
-#: elf/dl-load.c:1286
+#: elf/dl-load.c:1309
 msgid "cannot allocate memory for program header"
 msgstr "nepavyko išskirti atminties programos antraštei"
 
-#: elf/dl-load.c:1337
+#: elf/dl-load.c:1362
 msgid "cannot close file descriptor"
 msgstr "nepavyko užverti failo deskriptoriaus"
 
-#: elf/dl-load.c:1610
+#: elf/dl-load.c:1605
 msgid "file too short"
 msgstr "failas per trumpas"
 
-#: elf/dl-load.c:1646
+#: elf/dl-load.c:1639
 msgid "invalid ELF header"
 msgstr "netaisyklinga ELF antraštė"
 
-#: elf/dl-load.c:1661
+#: elf/dl-load.c:1654
 msgid "ELF file data encoding not big-endian"
 msgstr "ELF failo duomenų koduotė ne big-endian"
 
-#: elf/dl-load.c:1663
+#: elf/dl-load.c:1656
 msgid "ELF file data encoding not little-endian"
 msgstr "ELF failo duomenų koduotė ne little-endian"
 
-#: elf/dl-load.c:1667
+#: elf/dl-load.c:1660
 msgid "ELF file version ident does not match current one"
 msgstr "ELF failo versijos identifikatorius neatitinka esamo"
 
-#: elf/dl-load.c:1671
+#: elf/dl-load.c:1664
 msgid "ELF file OS ABI invalid"
 msgstr "ELF failo OS ABI netaisyklingas"
 
-#: elf/dl-load.c:1674
+#: elf/dl-load.c:1667
 msgid "ELF file ABI version invalid"
 msgstr "ELF failo ABI versija netaisyklinga"
 
-#: elf/dl-load.c:1680
+#: elf/dl-load.c:1673
 msgid "internal error"
 msgstr "vidinė klaida"
 
-#: elf/dl-load.c:1687
+#: elf/dl-load.c:1680
 msgid "ELF file version does not match current one"
 msgstr "ELF failo versija neatitinka esamos"
 
-#: elf/dl-load.c:2182
+#: elf/dl-load.c:2174
 msgid "wrong ELF class: ELFCLASS64"
 msgstr "klaidinga ELF klasė: ELFCLASS64"
 
-#: elf/dl-load.c:2183
+#: elf/dl-load.c:2175
 msgid "wrong ELF class: ELFCLASS32"
 msgstr "klaidinga ELF klasė: ELFCLASS32"
 
-#: elf/dl-load.c:2186
+#: elf/dl-load.c:2178
 msgid "cannot open shared object file"
 msgstr "nepavyko atverti bendrojo objekto failo"
 
-#: elf/dl-lookup.c:813
+#: elf/dl-lookup.c:810
 msgid "symbol lookup error"
 msgstr "simbolio paieškos klaida"
 
-#: elf/dl-open.c:405
+#: elf/dl-open.c:381
 msgid "TLS generation counter wrapped!  Please report this."
 msgstr "TLS kartų skaitiklis persivertė!  Prašytume apie tai pranešti."
 
-#: elf/dl-open.c:848
+#: elf/dl-open.c:817
 msgid "invalid mode for dlopen()"
 msgstr "netaisyklinga veiksena dlopen()"
 
-#: elf/dl-tls.c:1136
+#: elf/dl-tls.c:1209
 msgid "cannot create TLS data structures"
 msgstr "nepavyko sukurti TLS duomenų struktūrų"
 
-#: elf/ldconfig.c:125
+#: elf/ldconfig.c:124
 msgid "Print cache"
 msgstr "Spausdinti podėlį"
 
-#: elf/ldconfig.c:126
+#: elf/ldconfig.c:125
 msgid "Generate verbose messages"
 msgstr "Generuoti išsamius pranešimus"
 
-#: elf/ldconfig.c:127
+#: elf/ldconfig.c:126
 msgid "Don't build cache"
 msgstr "Nekurti podėlio"
 
-#: elf/ldconfig.c:129
+#: elf/ldconfig.c:128
 msgid "Change to and use ROOT as root directory"
 msgstr "Naudoti ŠAKNĮ kaip šakninį aplanką"
 
-#: elf/ldconfig.c:129
+#: elf/ldconfig.c:128
 msgid "ROOT"
 msgstr "ŠAKNIS"
 
-#: elf/ldconfig.c:130
+#: elf/ldconfig.c:129
 msgid "CACHE"
 msgstr "PODĖLIS"
 
-#: elf/ldconfig.c:130
+#: elf/ldconfig.c:129
 msgid "Use CACHE as cache file"
 msgstr "Naudoti PODĖLĮ kaip podėlio failą"
 
-#: elf/ldconfig.c:131
+#: elf/ldconfig.c:130
 msgid "CONF"
 msgstr "KONF"
 
-#: elf/ldconfig.c:131
+#: elf/ldconfig.c:130
 msgid "Use CONF as configuration file"
 msgstr "Naudoti KONF kaip konfigūracijos failą"
 
-#: elf/ldconfig.c:132
+#: elf/ldconfig.c:131
 msgid "Only process directories specified on the command line.  Don't build cache."
 msgstr "Apdoroti tik aplankus, nurodytus komandų eilutėje. Nekurti podėlio."
 
-#: elf/ldconfig.c:133
+#: elf/ldconfig.c:132
 msgid "Manually link individual libraries."
 msgstr "Rankiniu būdu susaistyti (link) atskiras bibliotekas."
 
-#: elf/ldconfig.c:134
+#: elf/ldconfig.c:133
 msgid "FORMAT"
 msgstr "FORMATAS"
 
-#: elf/ldconfig.c:135
+#: elf/ldconfig.c:134
 msgid "Ignore auxiliary cache file"
 msgstr "Ignoruoti pagalbinį podėlio failą"
 
-#: elf/ldconfig.c:277
+#: elf/ldconfig.c:276
 #, c-format
 msgid "Path `%s' given more than once"
 msgstr "Kelias „%s“ nurodytas daugiau negu vieną kartą"
 
-#: elf/ldconfig.c:497
+#: elf/ldconfig.c:496
 #, c-format
 msgid "%s is not a symbolic link\n"
 msgstr "%s nėra simbolinė nuoroda\n"
 
-#: elf/ldconfig.c:522
+#: elf/ldconfig.c:521
 #, c-format
 msgid "Can't link %s to %s"
 msgstr "Nepavyko susaistyti (link) %s su %s"
 
-#: elf/ldconfig.c:528
+#: elf/ldconfig.c:527
 msgid " (changed)\n"
 msgstr " (pakeista)\n"
 
-#: elf/ldconfig.c:530
+#: elf/ldconfig.c:529
 msgid " (SKIPPED)\n"
 msgstr " (PRALEISTA)\n"
 
-#: elf/ldconfig.c:585
+#: elf/ldconfig.c:584
 #, c-format
 msgid "Can't find %s"
 msgstr "Nepavyko rasti %s"
 
-#: elf/ldconfig.c:607
+#: elf/ldconfig.c:606
 #, c-format
 msgid "Ignored file %s since it is not a regular file."
 msgstr "Failas %s praleistas, nes tai nėra paprastas failas"
 
-#: elf/ldconfig.c:716
+#: elf/ldconfig.c:715
 #, c-format
 msgid "Can't open directory %s"
 msgstr "Nepavyko atverti aplanko %s"
 
-#: elf/ldconfig.c:777 elf/ldconfig.c:815 elf/readlib.c:81
+#: elf/ldconfig.c:776 elf/ldconfig.c:814 elf/readlib.c:81
 #, c-format
 msgid "Input file %s not found.\n"
 msgstr "Įvedimo failas %s nerastas.\n"
 
-#: elf/ldconfig.c:903
+#: elf/ldconfig.c:902
 #, c-format
 msgid "libc6 library %s in wrong directory"
 msgstr "libc6 biblioteka %s ne tame aplanke"
 
-#: elf/ldconfig.c:1125 locale/programs/xasprintf.c:31
+#: elf/ldconfig.c:1124 locale/programs/xasprintf.c:31
 #: locale/programs/xmalloc.c:63 malloc/obstack.c:416 malloc/obstack.c:418
 #: posix/getconf.c:460 posix/getconf.c:699
 #, c-format
 msgid "memory exhausted"
 msgstr "baigėsi atmintis"
 
-#: elf/ldconfig.c:1158
+#: elf/ldconfig.c:1157
 #, c-format
 msgid "%s:%u: cannot read directory %s"
 msgstr "%s:%u: nepavyko atverti aplanko %s"
 
-#: elf/ldconfig.c:1259
+#: elf/ldconfig.c:1258
 #, c-format
 msgid "Can't open cache file directory %s\n"
 msgstr "Nepavyko atverti podėlio failo aplanko %s\n"
@@ -519,24 +529,19 @@ msgstr "Failas %s per mažas, todėl netikrintas."
 msgid "%s is not an ELF file - it has the wrong magic bytes at the start.\n"
 msgstr "%s nėra ELF failas - magiškieji baitai failo pradžioje neteisingi.\n"
 
-#: iconv/iconv_prog.c:60
+#: iconv/iconv_prog.c:61
 msgid "encoding of original text"
 msgstr "originalaus teksto koduotė"
 
-#: iconv/iconv_prog.c:62
+#: iconv/iconv_prog.c:63
 msgid "Information:"
 msgstr "Informacija:"
 
-#: iconv/iconv_prog.c:77
+#: iconv/iconv_prog.c:82
 msgid "[FILE...]"
 msgstr "[FAILAS...]"
 
-#: iconv/iconv_prog.c:336
-#, c-format
-msgid "error while closing output file"
-msgstr "klaida užveriant išvedimo failą"
-
-#: iconv/iconv_prog.c:522
+#: iconv/iconv_prog.c:693
 #, c-format
 msgid "internal error (illegal descriptor)"
 msgstr "vidinė klaida (nekorektiškas deskriptorius)"
@@ -899,7 +904,7 @@ msgstr "%s: eilutė %d: bloga komanda „%s“\n"
 msgid "%s%sUnknown signal %d\n"
 msgstr "%s%sNežinomas signalas %d\n"
 
-#: stdio-common/psignal.c:44
+#: stdio-common/psignal.c:44 string/strsignal.c:57
 msgid "Unknown signal"
 msgstr "Nežinomas signalas"
 
@@ -907,12 +912,12 @@ msgstr "Nežinomas signalas"
 msgid "Unknown error "
 msgstr "Nežinoma klaida "
 
-#: string/strsignal.c:39
+#: string/strsignal.c:42
 #, c-format
 msgid "Real-time signal %d"
 msgstr "Realaus laiko signalas %d"
 
-#: string/strsignal.c:43
+#: string/strsignal.c:46
 #, c-format
 msgid "Unknown signal %d"
 msgstr "Nežinomas signalas %d"
@@ -1898,18 +1903,18 @@ msgstr "netinkama mėnesio diena"
 msgid "invalid weekday name"
 msgstr "netinkamas savaitės dienos pavadinimas"
 
-#: timezone/zic.c:3513
+#: timezone/zic.c:3512
 msgid "too many local time types"
 msgstr "per daug lokalaus laiko tipų"
 
-#: timezone/zic.c:3531
+#: timezone/zic.c:3530
 msgid "too many leap seconds"
 msgstr "per daug keliamųjų sekundžių"
 
-#: timezone/zic.c:3742
+#: timezone/zic.c:3741
 msgid "Odd number of quotation marks"
 msgstr "Nelyginis kabučių skaičius"
 
-#: timezone/zic.c:3839
+#: timezone/zic.c:3838
 msgid "use of 2/29 in non leap-year"
 msgstr "vasario 29 d. nekeliamuosiuose metuose"

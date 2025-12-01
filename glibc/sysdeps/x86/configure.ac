@@ -117,8 +117,20 @@ else
   AC_DEFINE_UNQUOTED(MINIMUM_X86_ISA_LEVEL, $libc_cv_have_x86_isa_level)
 fi
 LIBC_CONFIG_VAR([have-x86-isa-level], [$libc_cv_have_x86_isa_level])
+LIBC_CONFIG_VAR([x86-isa-level-2-or-above], [2 3 4])
 LIBC_CONFIG_VAR([x86-isa-level-3-or-above], [3 4])
+LIBC_CONFIG_VAR([x86-isa-level-4-or-above], [4])
 LIBC_CONFIG_VAR([enable-x86-isa-level], [$libc_cv_include_x86_isa_level])
+
+dnl Check if TEST_CC supports -mfpmath=387
+LIBC_TRY_TEST_CC_OPTION([if -mfpmath=387 works],
+  [-c -Werror -mfpmath=387],
+  libc_cv_have_test_cc_cflags_mfpmath_387,
+  [libc_cv_have_test_cc_cflags_mfpmath_387=yes],
+  [libc_cv_have_test_cc_cflags_mfpmath_387=no]
+)
+LIBC_CONFIG_VAR(have-test-cc-cflags-mfpmath-387,
+		$libc_cv_have_test_cc_cflags_mfpmath_387)
 
 dnl Static PIE is supported.
 AC_DEFINE(SUPPORT_STATIC_PIE)

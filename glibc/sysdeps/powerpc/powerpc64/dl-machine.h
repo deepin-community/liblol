@@ -1,6 +1,6 @@
 /* Machine-dependent ELF dynamic relocation inline functions.
    PowerPC64 version.
-   Copyright 1995-2024 Free Software Foundation, Inc.
+   Copyright 1995-2025 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -363,7 +363,6 @@ elf_machine_runtime_setup (struct link_map *map, struct r_scope_elem *scope[],
 				    / sizeof (Elf64_Rela));
       Elf64_Addr l_addr = map->l_addr;
       Elf64_Dyn **info = map->l_info;
-      char *p;
 
       extern void _dl_runtime_resolve (void);
       extern void _dl_profile_resolve (void);
@@ -435,20 +434,6 @@ elf_machine_runtime_setup (struct link_map *map, struct r_scope_elem *scope[],
 	      offset += PLT_ENTRY_WORDS;
 	      glink_offset += GLINK_ENTRY_WORDS (i);
 	    }
-
-	  /* Now, we've modified data.  We need to write the changes from
-	     the data cache to a second-level unified cache, then make
-	     sure that stale data in the instruction cache is removed.
-	     (In a multiprocessor system, the effect is more complex.)
-	     Most of the PLT shouldn't be in the instruction cache, but
-	     there may be a little overlap at the start and the end.
-
-	     Assumes that dcbst and icbi apply to lines of 16 bytes or
-	     more.  Current known line sizes are 16, 32, and 128 bytes.  */
-
-	  for (p = (char *) plt; p < (char *) &plt[offset]; p += 16)
-	    PPC_DCBST (p);
-	  PPC_SYNC;
 	}
     }
   return lazy;
@@ -537,7 +522,7 @@ elf_machine_fixup_plt (struct link_map *map, lookup_t sym_map,
   if (finaladdr != 0 && map != sym_map && !sym_map->l_relocated
 #if !defined RTLD_BOOTSTRAP && defined SHARED
       /* Bootstrap map doesn't have l_relocated set for it.  */
-      && sym_map != &GL(dl_rtld_map)
+      && !is_rtld_link_map (sym_map)
 #endif
       )
     offset = sym_map->l_addr;
@@ -662,7 +647,7 @@ resolve_ifunc (Elf64_Addr value,
   if (map != sym_map
 # if !defined RTLD_BOOTSTRAP && defined SHARED
       /* Bootstrap map doesn't have l_relocated set for it.  */
-      && sym_map != &GL(dl_rtld_map)
+      && !is_rtld_link_map (map)
 # endif
       && !sym_map->l_relocated)
     {

@@ -1,5 +1,5 @@
 /* Locating objects in the process image.  ld.so implementation.
-   Copyright (C) 2021-2024 Free Software Foundation, Inc.
+   Copyright (C) 2021-2025 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -356,7 +356,7 @@ _dlfo_lookup (uintptr_t pc, struct dl_find_object_internal *first1, size_t size)
 }
 
 int
-__dl_find_object (void *pc1, struct dl_find_object *result)
+_dl_find_object (void *pc1, struct dl_find_object *result)
 {
   uintptr_t pc = (uintptr_t) pc1;
 
@@ -463,8 +463,7 @@ __dl_find_object (void *pc1, struct dl_find_object *result)
         return -1;
     } /* Transaction retry loop.  */
 }
-hidden_def (__dl_find_object)
-weak_alias (__dl_find_object, _dl_find_object)
+rtld_hidden_def (_dl_find_object)
 
 /* _dlfo_process_initial is called twice.  First to compute the array
    sizes from the initial loaded mappings.  Second to fill in the
@@ -662,6 +661,14 @@ _dl_find_object_update_1 (struct link_map **loaded, size_t count)
     = _dlfo_loaded_mappings[!active_idx];
   size_t remaining_to_add = current_used + count;
 
+  /* remaining_to_add can be 0 if (current_used + count) wraps, but in practice
+     this is not possible as it represent counts of link maps.  Link maps have
+     sizes larger than 1 byte, so the sum of any two link map counts will
+     always fit within a size_t without wrapping around.  This check ensures
+     that target_seg is not erroneously considered potentially NULL by GCC. */
+  if (remaining_to_add == 0)
+    __builtin_unreachable ();
+
   /* Ensure that the new segment chain has enough space.  */
   {
     size_t new_allocated
@@ -853,6 +860,6 @@ _dl_find_object_freeres (void)
           seg = previous;
         }
       /* Stop searching in shared objects.  */
-      _dlfo_loaded_mappings[idx] = 0;
+      _dlfo_loaded_mappings[idx] = NULL;
     }
 }

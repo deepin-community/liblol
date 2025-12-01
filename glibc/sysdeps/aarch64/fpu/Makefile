@@ -1,13 +1,18 @@
 libmvec-supported-funcs = acos \
                           acosh \
+                          acospi \
                           asin \
                           asinh \
+                          asinpi \
                           atan \
                           atanh \
+                          atanpi \
                           atan2 \
+                          atan2pi \
                           cbrt \
                           cos \
                           cosh \
+                          cospi \
                           erf \
                           erfc \
                           exp \
@@ -22,8 +27,10 @@ libmvec-supported-funcs = acos \
                           pow \
                           sin \
                           sinh \
+                          sinpi \
                           tan \
-                          tanh
+                          tanh \
+                          tanpi
 
 float-advsimd-funcs = $(libmvec-supported-funcs)
 double-advsimd-funcs = $(libmvec-supported-funcs)
@@ -41,8 +48,6 @@ libmvec-support = $(addsuffix f_advsimd,$(float-advsimd-funcs)) \
                   v_log10_data \
                   erf_data \
                   erff_data \
-                  sv_erf_data \
-                  sv_erff_data \
                   v_exp_tail_data \
                   erfc_data \
                   erfcf_data \
@@ -51,8 +56,11 @@ libmvec-support = $(addsuffix f_advsimd,$(float-advsimd-funcs)) \
                   v_powf_data
 endif
 
-sve-cflags = -march=armv8-a+sve
+# Enable SVE for building libmvec.  Since CFLAGS may contain a -mcpu or -march,
+# add a generic -mcpu and -march with SVE enabled.  Also use a tune for a modern
+# SVE core.
 
+sve-cflags = -mcpu=generic+sve -march=armv8-a+sve -mtune=neoverse-v1
 
 ifeq ($(build-mathvec),yes)
 bench-libmvec = $(addprefix float-advsimd-,$(float-advsimd-funcs)) \

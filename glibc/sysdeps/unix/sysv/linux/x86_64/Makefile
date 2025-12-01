@@ -67,7 +67,7 @@ $(objpfx)libx86-64-isa-level.so: $(objpfx)libx86-64-isa-level-1.so
 	cp $< $@
 endif
 
-ifeq (yes,$(have-mamx-tile))
+ifeq (yesgnu2,$(have-mamx-tile)$(have-test-mtls-descriptor))
 tests += \
   tst-gnu2-tls2-amx \
 # tests
@@ -87,10 +87,10 @@ $(objpfx)tst-gnu2-tls2-amx-mod0.so: $(libsupport)
 $(objpfx)tst-gnu2-tls2-amx-mod1.so: $(libsupport)
 $(objpfx)tst-gnu2-tls2-amx-mod2.so: $(libsupport)
 
-CFLAGS-tst-gnu2-tls2-amx.c += -mamx-tile
-CFLAGS-tst-gnu2-tls2-amx-mod0.c += -mamx-tile -mtls-dialect=gnu2
-CFLAGS-tst-gnu2-tls2-amx-mod1.c += -mamx-tile -mtls-dialect=gnu2
-CFLAGS-tst-gnu2-tls2-amx-mod2.c += -mamx-tile -mtls-dialect=gnu2
+CFLAGS-tst-gnu2-tls2-amx.c += -mamx-tile -DTEST_AMX
+CFLAGS-tst-gnu2-tls2-amx-mod0.c += -mamx-tile -DTEST_AMX -mtls-dialect=gnu2
+CFLAGS-tst-gnu2-tls2-amx-mod1.c += -mamx-tile -DTEST_AMX -mtls-dialect=gnu2
+CFLAGS-tst-gnu2-tls2-amx-mod2.c += -mamx-tile -DTEST_AMX -mtls-dialect=gnu2
 endif
 
 endif # $(subdir) == elf

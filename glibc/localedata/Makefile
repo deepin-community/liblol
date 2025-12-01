@@ -1,4 +1,4 @@
-# Copyright (C) 1996-2024 Free Software Foundation, Inc.
+# Copyright (C) 1996-2025 Free Software Foundation, Inc.
 # Copyright The GNU Toolchain Authors.
 # This file is part of the GNU C Library.
 
@@ -236,6 +236,7 @@ tests = \
   bug-iconv-trans \
   bug-setlocale1 \
   bug-usesetlocale \
+  tst-bz13988 \
   tst-c-utf8-consistency \
   tst-digits \
   tst-iconv-emojis-trans \

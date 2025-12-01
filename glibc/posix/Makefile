@@ -1,4 +1,4 @@
-# Copyright (C) 1991-2024 Free Software Foundation, Inc.
+# Copyright (C) 1991-2025 Free Software Foundation, Inc.
 # This file is part of the GNU C Library.
 
 # The GNU C Library is free software; you can redistribute it and/or
@@ -253,7 +253,8 @@ tests := \
   tst-boost \
   tst-chmod \
   tst-cpucount \
-  tst-cpuset \
+  tst-cpuset-dynamic \
+  tst-cpuset-static \
   tst-dir \
   tst-execl1 \
   tst-execl2 \
@@ -303,6 +304,7 @@ tests := \
   tst-posix_spawn-setsid \
   tst-preadwrite \
   tst-preadwrite64 \
+  tst-regcomp-bracket-free \
   tst-regcomp-truncated \
   tst-regex \
   tst-regex2 \
@@ -347,6 +349,7 @@ tests-internal := \
   bug-regex5 \
   bug-regex20 \
   bug-regex33 \
+  tst-libc-message \
   # tests-internal
 
 tests-container := \
@@ -360,7 +363,7 @@ tests-time64 := \
   tst-wait4-time64 \
   # tests-time64
 
-xtests	:= \
+xtests := \
   tst-sched_rr_get_interval \
   # xtests
 
@@ -390,6 +393,7 @@ endif
 
 tests-static = \
   tst-exec-static \
+  tst-libc-message \
   tst-spawn-static \
   # tests-static
 
@@ -405,7 +409,7 @@ install-bin := \
   getconf \
   # getconf
 
-install-others-programs	:= \
+install-others-programs := \
   $(inst_libexecdir)/getconf \
   # install-others-programs
 

@@ -1,6 +1,6 @@
 /*-
  * Copyright 2009 Colin Percival
- * Copyright 2012-2018 Alexander Peslyak
+ * Copyright 2012-2025 Alexander Peslyak
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -30,7 +30,8 @@
 
 #include "crypt-port.h"
 
-#if INCLUDE_yescrypt || INCLUDE_scrypt || INCLUDE_gost_yescrypt
+#if INCLUDE_yescrypt || INCLUDE_scrypt || INCLUDE_gost_yescrypt || \
+    INCLUDE_sm3_yescrypt
 
 #pragma GCC diagnostic ignored "-Wcast-align"
 #pragma GCC diagnostic ignored "-Wconversion"
@@ -47,6 +48,8 @@
 #if 0
 #ifdef __XOP__
 #warning "Note: XOP is enabled.  That's great."
+#elif defined(__AVX512VL__)
+#warning "Note: AVX512VL is enabled.  That's great."
 #elif defined(__AVX__)
 #warning "Note: AVX is enabled, which is great for classic scrypt and YESCRYPT_WORM, but is sometimes slightly slower than plain SSE2 for YESCRYPT_RW"
 #elif defined(__SSE2__)
@@ -81,6 +84,8 @@
 #include <emmintrin.h>
 #ifdef __XOP__
 #include <x86intrin.h>
+#elif defined(__AVX512VL__)
+#include <immintrin.h>
 #endif
 #elif defined(__SSE__)
 #include <xmmintrin.h>
@@ -179,6 +184,9 @@ static inline void salsa20_simd_unshuffle(const salsa20_blk_t *Bin,
 #ifdef __XOP__
 #define ARX(out, in1, in2, s) \
 	out = _mm_xor_si128(out, _mm_roti_epi32(_mm_add_epi32(in1, in2), s));
+#elif defined(__AVX512VL__)
+#define ARX(out, in1, in2, s) \
+	out = _mm_xor_si128(out, _mm_rol_epi32(_mm_add_epi32(in1, in2), s));
 #else
 #define ARX(out, in1, in2, s) { \
 	__m128i tmp = _mm_add_epi32(in1, in2); \
@@ -1228,6 +1236,7 @@ static int yescrypt_kdf_body(const yescrypt_shared_t *shared,
 	VROM = NULL;
 	if (shared) {
 		uint64_t expected_size = (size_t)128 * r * NROM;
+		// coverity[overflow_const]
 		if ((NROM & (NROM - 1)) != 0 ||
 		    NROM <= 1 || NROM > UINT32_MAX ||
 		    shared->aligned_size < expected_size)
@@ -1555,4 +1564,5 @@ int yescrypt_free_local(yescrypt_local_t *local)
 	return free_region(local);
 }
 
-#endif /* INCLUDE_yescrypt || INCLUDE_scrypt || INCLUDE_gost_yescrypt */
+#endif /* INCLUDE_yescrypt || INCLUDE_scrypt || INCLUDE_gost_yescrypt ||
+          INCLUDE_sm3_yescrypt */

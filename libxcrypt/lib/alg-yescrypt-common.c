@@ -20,7 +20,8 @@
 
 #include "crypt-port.h"
 
-#if INCLUDE_yescrypt || INCLUDE_scrypt || INCLUDE_gost_yescrypt
+#if INCLUDE_yescrypt || INCLUDE_scrypt || INCLUDE_gost_yescrypt || \
+    INCLUDE_sm3_yescrypt
 
 #include <stdint.h>
 #include <string.h>
@@ -312,6 +313,7 @@ static void yescrypt_sha256_cipher(unsigned char *data, size_t datalen,
 		}
 		if (round == target)
 			break;
+		// coverity[overflow_const]
 		round += dir;
 	} while (1);
 
@@ -707,4 +709,5 @@ int crypto_scrypt(const uint8_t *passwd, size_t passwdlen,
 	return retval;
 }
 
-#endif /* INCLUDE_yescrypt || INCLUDE_scrypt || INCLUDE_gost_yescrypt */
+#endif /* INCLUDE_yescrypt || INCLUDE_scrypt || INCLUDE_gost_yescrypt ||
+          INCLUDE_sm3_yescrypt */
