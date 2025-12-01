@@ -1,4 +1,4 @@
-/* Copyright (C) 1999-2024 Free Software Foundation, Inc.
+/* Copyright (C) 1999-2025 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    This program is free software; you can redistribute it and/or modify
@@ -45,7 +45,6 @@
 #include <dl-hwcaps.h>
 #include <dl-is_dso.h>
 
-#include <dl-procinfo.h>
 
 #ifndef LD_SO_CONF
 # define LD_SO_CONF SYSCONFDIR "/ld.so.conf"

@@ -1,4 +1,4 @@
-/* Copyright (C) 2002-2024 Free Software Foundation, Inc.
+/* Copyright (C) 2002-2025 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -25,6 +25,7 @@
 #include <sem_routines.h>
 #include <futex-internal.h>
 #include <libc-lock.h>
+
 
 #if !PTHREAD_IN_LIBC
 /* The private names are not exported from libc.  */
@@ -57,11 +58,7 @@ __sem_open (const char *name, int oflag, ...)
     }
 
   /* Disable asynchronous cancellation.  */
-#ifdef __libc_ptf_call
-  int state;
-  __libc_ptf_call (__pthread_setcancelstate,
-                   (PTHREAD_CANCEL_DISABLE, &state), 0);
-#endif
+  int state = __pthread_setcancelstate (PTHREAD_CANCEL_DISABLE, &state);
 
   /* If the semaphore object has to exist simply open it.  */
   if ((oflag & O_CREAT) == 0 || (oflag & O_EXCL) == 0)
@@ -76,6 +73,7 @@ __sem_open (const char *name, int oflag, ...)
 	    goto try_create;
 
 	  /* Return.  errno is already set.  */
+	  result = SEM_FAILED;
 	}
       else
 	/* Check whether we already have this semaphore mapped and
@@ -213,9 +211,7 @@ __sem_open (const char *name, int oflag, ...)
     }
 
 out:
-#ifdef __libc_ptf_call
-  __libc_ptf_call (__pthread_setcancelstate, (state, NULL), 0);
-#endif
+  __pthread_setcancelstate (state, NULL);
 
   return result;
 }

@@ -111,6 +111,7 @@
 #define __NR_gettimeofday 1073741920
 #define __NR_getuid 1073741926
 #define __NR_getxattr 1073742015
+#define __NR_getxattrat 1073742288
 #define __NR_init_module 1073741999
 #define __NR_inotify_add_watch 1073742078
 #define __NR_inotify_init 1073742077
@@ -145,6 +146,7 @@
 #define __NR_listen 1073741874
 #define __NR_listmount 1073742282
 #define __NR_listxattr 1073742018
+#define __NR_listxattrat 1073742289
 #define __NR_llistxattr 1073742019
 #define __NR_lookup_dcookie 1073742036
 #define __NR_lremovexattr 1073742022
@@ -155,6 +157,7 @@
 #define __NR_lsm_set_self_attr 1073742284
 #define __NR_lstat 1073741830
 #define __NR_madvise 1073741852
+#define __NR_map_shadow_stack 1073742277
 #define __NR_mbind 1073742061
 #define __NR_membarrier 1073742148
 #define __NR_memfd_create 1073742143
@@ -182,6 +185,7 @@
 #define __NR_mq_timedsend 1073742066
 #define __NR_mq_unlink 1073742065
 #define __NR_mremap 1073741849
+#define __NR_mseal 1073742286
 #define __NR_msgctl 1073741895
 #define __NR_msgget 1073741892
 #define __NR_msgrcv 1073741894
@@ -196,6 +200,7 @@
 #define __NR_open 1073741826
 #define __NR_open_by_handle_at 1073742128
 #define __NR_open_tree 1073742252
+#define __NR_open_tree_attr 1073742291
 #define __NR_openat 1073742081
 #define __NR_openat2 1073742261
 #define __NR_pause 1073741858
@@ -240,6 +245,7 @@
 #define __NR_recvmsg 1073742343
 #define __NR_remap_file_pages 1073742040
 #define __NR_removexattr 1073742021
+#define __NR_removexattrat 1073742290
 #define __NR_rename 1073741906
 #define __NR_renameat 1073742088
 #define __NR_renameat2 1073742140
@@ -303,6 +309,7 @@
 #define __NR_settimeofday 1073741988
 #define __NR_setuid 1073741929
 #define __NR_setxattr 1073742012
+#define __NR_setxattrat 1073742287
 #define __NR_shmat 1073741854
 #define __NR_shmctl 1073741855
 #define __NR_shmdt 1073741891
@@ -349,6 +356,7 @@
 #define __NR_unlink 1073741911
 #define __NR_unlinkat 1073742087
 #define __NR_unshare 1073742096
+#define __NR_uretprobe 1073742159
 #define __NR_userfaultfd 1073742147
 #define __NR_ustat 1073741960
 #define __NR_utime 1073741956

@@ -314,9 +314,11 @@ my %VALID_FLAGS = (
     DEFAULT => 1,
     ALT     => 1,
     DEBIAN  => 1,
+    EULER   => 1,
     FEDORA  => 1,
     FREEBSD => 1,
     GLIBC   => 1,
+    KYLIN   => 1,
     NETBSD  => 1,
     OPENBSD => 1,
     OSX     => 1,
@@ -521,16 +523,13 @@ sub parse_symver_args {
         if (/^SYMVER_MIN=(.+)$/) {
             $usage_error->() if defined $SYMVER_MIN;
             $SYMVER_MIN = $1;
-        }
-        elsif (/^SYMVER_FLOOR=(.+)$/) {
+        } elsif (/^SYMVER_FLOOR=(.+)$/) {
             $usage_error->() if defined $SYMVER_FLOOR;
             $SYMVER_FLOOR = $1;
-        }
-        elsif (/^COMPAT_ABI=(.+)$/) {
+        } elsif (/^COMPAT_ABI=(.+)$/) {
             $usage_error->() if defined $COMPAT_ABI;
             $COMPAT_ABI = $1;
-        }
-        else {
+        } else {
             $usage_error->() if defined $map_in;
             $map_in = $_;
         }

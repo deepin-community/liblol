@@ -1,5 +1,5 @@
 /* Read and display shared object profiling data.
-   Copyright (C) 1997-2024 Free Software Foundation, Inc.
+   Copyright (C) 1997-2025 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -530,10 +530,7 @@ load_shobj (const char *name)
     printf ("string table: %p\n", result->dynstrtab);
 
   /* Determine the soname.  */
-  if (map->l_info[DT_SONAME] == NULL)
-    result->soname = NULL;
-  else
-    result->soname = result->dynstrtab + map->l_info[DT_SONAME]->d_un.d_val;
+  result->soname = l_soname (map);
   if (do_test && result->soname != NULL)
     printf ("soname: %s\n", result->soname);
 

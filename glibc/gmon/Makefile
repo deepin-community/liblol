@@ -1,4 +1,4 @@
-# Copyright (C) 1995-2024 Free Software Foundation, Inc.
+# Copyright (C) 1995-2025 Free Software Foundation, Inc.
 # Copyright The GNU Toolchain Authors.
 # This file is part of the GNU C Library.
 
@@ -42,7 +42,8 @@ tests = \
   tst-mcount-overflow \
   tst-sprofil \
   # tests
-ifeq ($(build-profile),yes)
+# clang does not support -profile to instruct linker to use lc_p
+ifeq ($(build-profile)$(have-test-clang),yesno)
 tests += tst-profile-static
 tests-static += tst-profile-static
 
@@ -61,8 +62,9 @@ tests-static += tst-gmon-static-pie
 endif
 endif
 
-# The mcount code won't work without a frame pointer.
-CFLAGS-mcount.c := -fno-omit-frame-pointer
+# The mcount code won't work without a frame pointer nor when memcpy or
+# memset are called.
+CFLAGS-mcount.c := -fno-omit-frame-pointer -fno-tree-loop-distribute-patterns
 
 CFLAGS-tst-gmon.c := -fno-omit-frame-pointer -pg
 tst-gmon-no-pie = yes

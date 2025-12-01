@@ -1,7 +1,7 @@
 Source: liblol
 Section: otherosfs
 Priority: optional
-Maintainer: Miao Wang <shankerwangmiao@gmail.com>
+Maintainer: Mingcong Bai <jeffbai@aosc.io>
 Build-Depends: debhelper-compat (= 13),
                libstdc++6,
                libltdl-dev,

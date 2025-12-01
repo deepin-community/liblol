@@ -1,14 +1,14 @@
 # Serbian translation for libc.
 # Copyright © 2020 Free Software Foundation, Inc.
 # This file is distributed under the same license as the glibc package.
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2020-2024.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2020-2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: libc 2.38.9000\n"
+"Project-Id-Version: libc 2.40.9000\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-21 00:32+0200\n"
-"PO-Revision-Date: 2024-01-21 08:35+0100\n"
+"POT-Creation-Date: 2025-07-19 22:21+0200\n"
+"PO-Revision-Date: 2025-01-09 18:56+0100\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <(nothing)>\n"
 "Language: sr\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Bugs: Report translation errors to the Language-Team address.\n"
+"X-Generator: Poedit 3.5\n"
 
 #: argp/argp-help.c:229
 #, c-format
@@ -68,7 +69,7 @@ msgid "Give a short usage message"
 msgstr "Приказује кратку поруку коришћења"
 
 #: argp/argp-parse.c:88 catgets/gencat.c:110 catgets/gencat.c:114
-#: iconv/iconv_prog.c:60 iconv/iconv_prog.c:61 nscd/nscd.c:106 nscd/nscd.c:110
+#: iconv/iconv_prog.c:61 iconv/iconv_prog.c:62 nscd/nscd.c:106 nscd/nscd.c:110
 #: nss/makedb.c:122
 msgid "NAME"
 msgstr "НАЗИВ"
@@ -98,27 +99,19 @@ msgstr "(ГРЕШКА ПРОГРАМА) Није познато издање!?"
 msgid "%s: Too many arguments\n"
 msgstr "%s: Превише аргумената\n"
 
-#: argp/argp-parse.c:751
+#: argp/argp-parse.c:754
 msgid "(PROGRAM ERROR) Option should have been recognized!?"
 msgstr "(ГРЕШКА ПРОГРАМА) Опција треба да буде препозната!?"
 
 #: assert/assert-perr.c:35
 #, c-format
-msgid ""
-"%s%s%s:%u: %s%sUnexpected error: %s.\n"
-"%n"
-msgstr ""
-"%s%s%s:%u: %s%sНеочекивана грешка: %s.\n"
-"%n"
+msgid "%s%s%s:%u: %s%sUnexpected error: %s.\n"
+msgstr "%s%s%s:%u: %s%sНеочекивана грешка: %s.\n"
 
-#: assert/assert.c:103
+#: assert/assert.c:127
 #, c-format
-msgid ""
-"%s%s%s:%u: %s%sAssertion `%s' failed.\n"
-"%n"
-msgstr ""
-"%s%s%s:%u: %s%sТврдња „%s“ није успела.\n"
-"%n"
+msgid "%s%s%s:%u: %s%sAssertion `%s' failed.\n"
+msgstr "%s%s%s:%u: %s%sТврдња „%s“ није успела.\n"
 
 #: catgets/gencat.c:111
 msgid "Create C header file NAME containing symbol definitions"
@@ -148,8 +141,8 @@ msgstr ""
 "-o ИЗЛАЗНА-ДАТОТЕКА [УЛАЗНА-ДАТОТЕКА]...\n"
 "[ИЗЛАЗНА-ДАТОТЕКА [УЛАЗНА-ДАТОТЕКА]...]"
 
-#: catgets/gencat.c:230 debug/pcprofiledump.c:208 elf/ldconfig.c:217
-#: elf/pldd.c:246 elf/sln.c:77 elf/sprof.c:371 iconv/iconv_prog.c:387
+#: catgets/gencat.c:230 debug/pcprofiledump.c:219 elf/ldconfig.c:216
+#: elf/pldd.c:246 elf/sln.c:77 elf/sprof.c:371 iconv/iconv_prog.c:374
 #: iconv/iconvconfig.c:380 locale/programs/locale.c:275
 #: locale/programs/localedef.c:437 login/programs/pt_chown.c:88
 #: malloc/memusagestat.c:564 nss/getent.c:961 nss/makedb.c:371
@@ -162,9 +155,9 @@ msgstr ""
 "За упутства о пријављивању грешака, погледајте:\n"
 "%s.\n"
 
-#: catgets/gencat.c:246 debug/pcprofiledump.c:224 debug/xtrace.sh:63
-#: elf/ldconfig.c:233 elf/ldd.bash.in:38 elf/pldd.c:262 elf/sotruss.sh:75
-#: elf/sprof.c:388 iconv/iconv_prog.c:404 iconv/iconvconfig.c:397
+#: catgets/gencat.c:246 debug/pcprofiledump.c:235 debug/xtrace.sh:63
+#: elf/ldconfig.c:232 elf/ldd.bash.in:38 elf/pldd.c:262 elf/sotruss.sh:75
+#: elf/sprof.c:388 iconv/iconv_prog.c:391 iconv/iconvconfig.c:397
 #: locale/programs/locale.c:292 locale/programs/localedef.c:459
 #: login/programs/pt_chown.c:62 malloc/memusage.sh:70 malloc/memusagestat.c:582
 #: nscd/nscd.c:521 nss/getent.c:92 nss/makedb.c:387 posix/getconf.c:487
@@ -178,8 +171,8 @@ msgstr ""
 "Ово је слободан софтвер; погледајте изворни кôд за услове умножавања.  Не постоји\n"
 "НИКАКВА гаранција; чак ни о ТРЖИШНОЈ ВРЕДНОСТИ или ПРИЛАГОЂЕНОСТИ ОДРЕЂЕНОЈ НАМЕНИ.\n"
 
-#: catgets/gencat.c:251 debug/pcprofiledump.c:229 debug/xtrace.sh:67
-#: elf/ldconfig.c:238 elf/pldd.c:267 elf/sprof.c:394 iconv/iconv_prog.c:409
+#: catgets/gencat.c:251 debug/pcprofiledump.c:240 debug/xtrace.sh:67
+#: elf/ldconfig.c:237 elf/pldd.c:267 elf/sprof.c:394 iconv/iconv_prog.c:396
 #: iconv/iconvconfig.c:402 locale/programs/locale.c:297
 #: locale/programs/localedef.c:464 malloc/memusage.sh:74
 #: malloc/memusagestat.c:587 nscd/nscd.c:526 nss/getent.c:97 nss/makedb.c:392
@@ -192,11 +185,11 @@ msgstr "Написао је %s.\n"
 msgid "*standard input*"
 msgstr "*стандардни улаз*"
 
-#: catgets/gencat.c:288 iconv/iconv_charmap.c:172 iconv/iconv_prog.c:272
-#: nss/makedb.c:248
+#: catgets/gencat.c:288 iconv/iconv_charmap.c:172 iconv/iconv_prog.c:279
+#: iconv/iconv_prog.c:432 nss/makedb.c:248
 #, c-format
 msgid "cannot open input file `%s'"
-msgstr "Не могу да отворим улазну датотеку „%s“"
+msgstr "не могу да отворим улазну датотеку „%s“"
 
 #: catgets/gencat.c:417 catgets/gencat.c:492
 msgid "illegal set number"
@@ -289,17 +282,32 @@ msgstr "Исказује податке створене ПЦ профилиса
 msgid "[FILE]"
 msgstr "[ДАТОТЕКА]"
 
-#: debug/pcprofiledump.c:107
-#, c-format
-msgid "cannot open input file"
-msgstr "не могу да отворим улазну датотеку"
-
-#: debug/pcprofiledump.c:114
+#: debug/pcprofiledump.c:97
 #, c-format
 msgid "cannot read header"
 msgstr "не могу да прочитам заглавље"
 
-#: debug/pcprofiledump.c:178
+#: debug/pcprofiledump.c:99
+#, c-format
+msgid "cannot read pointer pair"
+msgstr "не могу да прочитам пар показивача"
+
+#: debug/pcprofiledump.c:107
+#, c-format
+msgid "unexpected end of file in header"
+msgstr "неочекивани крај датотеке у заглављу"
+
+#: debug/pcprofiledump.c:110
+#, c-format
+msgid "unexpected end of file in pointer pair"
+msgstr "неочекивани крај датотеке у пару показивача"
+
+#: debug/pcprofiledump.c:145
+#, c-format
+msgid "cannot open input file"
+msgstr "не могу да отворим улазну датотеку"
+
+#: debug/pcprofiledump.c:189
 #, c-format
 msgid "invalid pointer size"
 msgstr "неисправна величина показивача"
@@ -393,9 +401,9 @@ msgstr "Датотека оставе има погрешну крајност.\
 
 #: elf/cache.c:282
 msgid "Cache generated by: "
-msgstr "Оставу је створио:"
+msgstr "Оставу је створио: "
 
-#: elf/cache.c:296 elf/ldconfig.c:1239
+#: elf/cache.c:296 elf/ldconfig.c:1238
 #, c-format
 msgid "Can't open cache file %s\n"
 msgstr "Не могу да отворим датотеку оставе „%s“\n"
@@ -464,7 +472,7 @@ msgstr "грешка приликом учитавања дељених библ
 msgid "DYNAMIC LINKER BUG!!!"
 msgstr "ГРЕШКА ДИНАМИЧКОГ СВЕЗИВАЧА!!!"
 
-#: elf/dl-close.c:357 elf/dl-open.c:298
+#: elf/dl-close.c:363 elf/dl-open.c:297
 msgid "cannot create scope list"
 msgstr "не могу да направим списак досега"
 
@@ -497,147 +505,135 @@ msgstr "не могу да доделим списак зависности"
 msgid "cannot allocate symbol search list"
 msgstr "не могу да доделим списак претраге симбола"
 
-#: elf/dl-fptr.c:88 sysdeps/hppa/dl-fptr.c:96
-msgid "cannot map pages for fdesc table"
-msgstr "не могу да мапирам странице за „fdesc“ табелу"
-
-#: elf/dl-fptr.c:192 sysdeps/hppa/dl-fptr.c:214
-msgid "cannot map pages for fptr table"
-msgstr "не могу да мапирам странице за „fptr“ табелу"
-
-#: elf/dl-fptr.c:221 sysdeps/hppa/dl-fptr.c:243
-msgid "internal error: symidx out of range of fptr table"
-msgstr "унутрашња грешка: „symidx“ је ван опсега „fptr“ табеле"
-
-#: elf/dl-hwcaps.c:104
+#: elf/dl-hwcaps.c:103
 msgid "cannot create HWCAP priorities"
 msgstr "не могу да направим „HWCAP“ својства"
 
-#: elf/dl-hwcaps.c:196
+#: elf/dl-hwcaps.c:195
 msgid "cannot create capability list"
 msgstr "не могу да направим списак способности"
 
-#: elf/dl-load.c:423
+#: elf/dl-load.c:424
 msgid "cannot allocate name record"
 msgstr "не могу да доделим запис назива"
 
-#: elf/dl-load.c:525 elf/dl-load.c:638 elf/dl-load.c:732 elf/dl-load.c:829
+#: elf/dl-load.c:510 elf/dl-load.c:623 elf/dl-load.c:717 elf/dl-load.c:814
 msgid "cannot create cache for search path"
 msgstr "не могу да направим оставу за путању претраге"
 
-#: elf/dl-load.c:621
+#: elf/dl-load.c:606
 msgid "cannot create RUNPATH/RPATH copy"
 msgstr "не могу да направим умножаг „RUNPATH/RPATH“"
 
-#: elf/dl-load.c:718
+#: elf/dl-load.c:703
 msgid "cannot create search path array"
 msgstr "не могу да направим низ путање претраге"
 
-#: elf/dl-load.c:957
+#: elf/dl-load.c:978
 msgid "cannot stat shared object"
 msgstr "не могу да добавим податке о дељеном објекту"
 
-#: elf/dl-load.c:1048 elf/dl-load.c:2163
+#: elf/dl-load.c:1071 elf/dl-load.c:2155
 msgid "cannot create shared object descriptor"
 msgstr "не могу да направим описник дељеног објекта"
 
-#: elf/dl-load.c:1067 elf/dl-load.c:1610 elf/dl-load.c:1718
+#: elf/dl-load.c:1090 elf/dl-load.c:1605 elf/dl-load.c:1711
 msgid "cannot read file data"
 msgstr "не могу да прочитам податке података"
 
-#: elf/dl-load.c:1120 elf/dl-map-segments.h:117
+#: elf/dl-load.c:1143 elf/dl-map-segments.h:118
 msgid "ELF load command address/offset not page-aligned"
 msgstr "адреса/померај ЕЛФ наредбе учитавања није поравната на страницу"
 
-#: elf/dl-load.c:1212
+#: elf/dl-load.c:1235
 msgid "object file has no loadable segments"
 msgstr "датотека објекта нема учитљиве подеоке"
 
-#: elf/dl-load.c:1229
+#: elf/dl-load.c:1252
 msgid "cannot dynamically load executable"
 msgstr "не могу динамички да учитам извршног"
 
-#: elf/dl-load.c:1236
+#: elf/dl-load.c:1259
 msgid "object file has no dynamic section"
 msgstr "датотека објекта нема динамички одељак"
 
-#: elf/dl-load.c:1271
+#: elf/dl-load.c:1294
 msgid "cannot dynamically load position-independent executable"
 msgstr "не могу динамички да учитам извршног независног од положаја"
 
-#: elf/dl-load.c:1273
+#: elf/dl-load.c:1296
 msgid "shared object cannot be dlopen()ed"
 msgstr "над дељеним објектом се не може извршити „dlopen()“"
 
-#: elf/dl-load.c:1286
+#: elf/dl-load.c:1309
 msgid "cannot allocate memory for program header"
 msgstr "не могу да доделим меморију за заглавље програма"
 
-#: elf/dl-load.c:1309
+#: elf/dl-load.c:1334
 msgid "cannot enable executable stack as shared object requires"
 msgstr "не могу да омогућим спремник извршног као што захтева дељени објекат"
 
-#: elf/dl-load.c:1337
+#: elf/dl-load.c:1362
 msgid "cannot close file descriptor"
 msgstr "не могу да затворим описник датотеке"
 
-#: elf/dl-load.c:1610
+#: elf/dl-load.c:1605
 msgid "file too short"
 msgstr "датотека је прекратка"
 
-#: elf/dl-load.c:1646
+#: elf/dl-load.c:1639
 msgid "invalid ELF header"
 msgstr "неисправно ЕЛФ заглавље"
 
-#: elf/dl-load.c:1661
+#: elf/dl-load.c:1654
 msgid "ELF file data encoding not big-endian"
 msgstr "кодирање података ЕЛФ датотеке није велике крајности"
 
-#: elf/dl-load.c:1663
+#: elf/dl-load.c:1656
 msgid "ELF file data encoding not little-endian"
 msgstr "кодирање података ЕЛФ датотеке није мале крајности"
 
-#: elf/dl-load.c:1667
+#: elf/dl-load.c:1660
 msgid "ELF file version ident does not match current one"
 msgstr "увлачење издања ЕЛФ датотеке не одговара тренутном"
 
-#: elf/dl-load.c:1671
+#: elf/dl-load.c:1664
 msgid "ELF file OS ABI invalid"
 msgstr "ОС АБИ ЕЛФ датотеке није исправно"
 
-#: elf/dl-load.c:1674
+#: elf/dl-load.c:1667
 msgid "ELF file ABI version invalid"
 msgstr "АБИ издање ЕЛФ датотеке није исправно"
 
-#: elf/dl-load.c:1677
+#: elf/dl-load.c:1670
 msgid "nonzero padding in e_ident"
 msgstr "ненулто попуњавање у „e_ident“-у"
 
-#: elf/dl-load.c:1680
+#: elf/dl-load.c:1673
 msgid "internal error"
 msgstr "унутрашња грешка"
 
-#: elf/dl-load.c:1687
+#: elf/dl-load.c:1680
 msgid "ELF file version does not match current one"
 msgstr "издање ELF датотеке не одговара тренутном"
 
-#: elf/dl-load.c:1699
+#: elf/dl-load.c:1692
 msgid "only ET_DYN and ET_EXEC can be loaded"
 msgstr "само „ET_DYN“ и „ET_EXEC“ се могу учитати"
 
-#: elf/dl-load.c:1704
+#: elf/dl-load.c:1697
 msgid "ELF file's phentsize not the expected size"
 msgstr "„phentsize“ ЕЛФ датотеке није очекиване величине"
 
-#: elf/dl-load.c:2182
+#: elf/dl-load.c:2174
 msgid "wrong ELF class: ELFCLASS64"
 msgstr "погрешна ЕЛФ класа: ELFCLASS64"
 
-#: elf/dl-load.c:2183
+#: elf/dl-load.c:2175
 msgid "wrong ELF class: ELFCLASS32"
 msgstr "погрешна ЕЛФ класа: ELFCLASS32"
 
-#: elf/dl-load.c:2186
+#: elf/dl-load.c:2178
 msgid "cannot open shared object file"
 msgstr "не могу да отворим датотеку дељеног објекта"
 
@@ -653,31 +649,31 @@ msgstr "не могу да променим заштите меморије"
 msgid "cannot map zero-fill pages"
 msgstr "не могу да мапирам странице нулте попуне"
 
-#: elf/dl-lookup.c:813
+#: elf/dl-lookup.c:810
 msgid "symbol lookup error"
 msgstr "грешка претраге симбола"
 
-#: elf/dl-open.c:84
+#: elf/dl-open.c:83
 msgid "cannot extend global scope"
 msgstr "не могу да раширим општи досег"
 
-#: elf/dl-open.c:405
+#: elf/dl-open.c:381
 msgid "TLS generation counter wrapped!  Please report this."
 msgstr "Бројач ТЛС стварања је умотан!  Пријавите ово."
 
-#: elf/dl-open.c:758
+#: elf/dl-open.c:717
 msgid "cannot allocate address lookup data"
 msgstr "не могу да доделим податке тражења адресе"
 
-#: elf/dl-open.c:848
+#: elf/dl-open.c:817
 msgid "invalid mode for dlopen()"
 msgstr "неисправан режим за „dlopen()“"
 
-#: elf/dl-open.c:865
+#: elf/dl-open.c:834
 msgid "no more namespaces available for dlmopen()"
 msgstr "нема више доступних називних простора за „dlmopen()“"
 
-#: elf/dl-open.c:890
+#: elf/dl-open.c:859
 msgid "invalid target namespace in dlmopen()"
 msgstr "неисправни циљни називни простор „dlmopen()“"
 
@@ -685,16 +681,16 @@ msgstr "неисправни циљни називни простор „dlmopen
 msgid "cannot allocate memory in static TLS block"
 msgstr "не могу да доделим меморију у статичком ТЛС блоку"
 
-#: elf/dl-reloc.c:288
+#: elf/dl-reloc.c:283
 msgid "cannot make segment writable for relocation"
 msgstr "не могу да учиним подеок уписивим за премештање"
 
-#: elf/dl-reloc.c:319
+#: elf/dl-reloc.c:313
 #, c-format
 msgid "%s: out of memory to store relocation results for %s\n"
 msgstr "%s: нема више меморије за смештање резултата премештаја за „%s“\n"
 
-#: elf/dl-reloc.c:335
+#: elf/dl-reloc.c:328
 msgid "cannot restore segment prot after reloc"
 msgstr "не могу да повратим „prot“ подеока након „reloc“-а"
 
@@ -706,7 +702,7 @@ msgstr "не могу да применим додатну заштиту мем
 msgid "RTLD_NEXT used in code not dynamically loaded"
 msgstr "„RTLD_NEXT“ коришћено у коду није динамички учитано"
 
-#: elf/dl-tls.c:1136
+#: elf/dl-tls.c:1209
 msgid "cannot create TLS data structures"
 msgstr "не могу да направим структуре ТЛС података"
 
@@ -718,220 +714,220 @@ msgstr "грешка претраге издања"
 msgid "cannot allocate version reference table"
 msgstr "не могу да доделим табелу упуте издања"
 
-#: elf/dl-version.c:380
+#: elf/dl-version.c:387
 msgid "DT_RELR without GLIBC_ABI_DT_RELR dependency"
 msgstr "„DT_RELR“ без „GLIBC_ABI_DT_RELR“ зависности"
 
-#: elf/ldconfig.c:125
+#: elf/ldconfig.c:124
 msgid "Print cache"
 msgstr "Исписује оставу"
 
-#: elf/ldconfig.c:126
+#: elf/ldconfig.c:125
 msgid "Generate verbose messages"
 msgstr "Ствара опширне поруке"
 
-#: elf/ldconfig.c:127
+#: elf/ldconfig.c:126
 msgid "Don't build cache"
 msgstr "Не гради оставу"
 
-#: elf/ldconfig.c:128
+#: elf/ldconfig.c:127
 msgid "Don't update symbolic links"
 msgstr "Не освежава симболичке везе"
 
-#: elf/ldconfig.c:129
+#: elf/ldconfig.c:128
 msgid "Change to and use ROOT as root directory"
 msgstr "Прелази у и користи КОРЕНИ као корени директоријум"
 
-#: elf/ldconfig.c:129
+#: elf/ldconfig.c:128
 msgid "ROOT"
 msgstr "КОРЕНИ"
 
-#: elf/ldconfig.c:130
+#: elf/ldconfig.c:129
 msgid "CACHE"
 msgstr "ОСТАВА"
 
-#: elf/ldconfig.c:130
+#: elf/ldconfig.c:129
 msgid "Use CACHE as cache file"
 msgstr "Користи ОСТАВУ као датотеку оставе"
 
-#: elf/ldconfig.c:131
+#: elf/ldconfig.c:130
 msgid "CONF"
 msgstr "ПОДЕШАВАЊА"
 
-#: elf/ldconfig.c:131
+#: elf/ldconfig.c:130
 msgid "Use CONF as configuration file"
 msgstr "Користи ПОДЕШАВАЊА као датотеку подешавања"
 
-#: elf/ldconfig.c:132
+#: elf/ldconfig.c:131
 msgid "Only process directories specified on the command line.  Don't build cache."
 msgstr "Само обрађује директоријуме наведене на линији наредби.  Не гради оставу."
 
-#: elf/ldconfig.c:133
+#: elf/ldconfig.c:132
 msgid "Manually link individual libraries."
 msgstr "Ручно свезује појединачне библиотеке."
 
-#: elf/ldconfig.c:134
+#: elf/ldconfig.c:133
 msgid "FORMAT"
 msgstr "ФОРМАТ"
 
-#: elf/ldconfig.c:134
+#: elf/ldconfig.c:133
 msgid "Format to use: new (default), old, or compat"
 msgstr "Формат за коришћење: „new“ (основно), „old“, или „compat“"
 
-#: elf/ldconfig.c:135
+#: elf/ldconfig.c:134
 msgid "Ignore auxiliary cache file"
 msgstr "Занемарује помоћну датотеку оставе"
 
-#: elf/ldconfig.c:143
+#: elf/ldconfig.c:142
 msgid "Configure Dynamic Linker Run Time Bindings."
 msgstr "Подешава свезивања времена извршења динамичког везача."
 
-#: elf/ldconfig.c:277
+#: elf/ldconfig.c:276
 #, c-format
 msgid "Path `%s' given more than once"
 msgstr "Путања „%s“ је дата више пута"
 
-#: elf/ldconfig.c:278
+#: elf/ldconfig.c:277
 #, c-format
 msgid "(from %s:%d and %s:%d)\n"
 msgstr "(од %s:%d и %s:%d)\n"
 
-#: elf/ldconfig.c:310 elf/ldconfig.c:351
+#: elf/ldconfig.c:309 elf/ldconfig.c:350
 #, c-format
 msgid "Could not form glibc-hwcaps path"
 msgstr "Не могу да формирам „glibc-hwcaps“ путању"
 
-#: elf/ldconfig.c:324
+#: elf/ldconfig.c:323
 #, c-format
 msgid "Listing directory %s"
 msgstr "Исписујем директоријум „%s“"
 
-#: elf/ldconfig.c:406
+#: elf/ldconfig.c:405
 #, c-format
 msgid "Can't stat %s"
 msgstr "Не могу да добавим податке за „%s“"
 
-#: elf/ldconfig.c:487
+#: elf/ldconfig.c:486
 #, c-format
 msgid "Can't stat %s\n"
 msgstr "Не могу да добавим податке за „%s“\n"
 
-#: elf/ldconfig.c:497
+#: elf/ldconfig.c:496
 #, c-format
 msgid "%s is not a symbolic link\n"
 msgstr "„%s“ није симболичка веза\n"
 
-#: elf/ldconfig.c:516
+#: elf/ldconfig.c:515
 #, c-format
 msgid "Can't unlink %s"
 msgstr "Не могу да развежем „%s“"
 
-#: elf/ldconfig.c:522
+#: elf/ldconfig.c:521
 #, c-format
 msgid "Can't link %s to %s"
 msgstr "Не могу да повежем „%s“ са „%s“"
 
-#: elf/ldconfig.c:528
+#: elf/ldconfig.c:527
 msgid " (changed)\n"
 msgstr " (измењено)\n"
 
-#: elf/ldconfig.c:530
+#: elf/ldconfig.c:529
 msgid " (SKIPPED)\n"
 msgstr " (ПРЕСКОЧЕНО)\n"
 
-#: elf/ldconfig.c:585
+#: elf/ldconfig.c:584
 #, c-format
 msgid "Can't find %s"
 msgstr "Не могу да нађем „%s“"
 
-#: elf/ldconfig.c:601 elf/ldconfig.c:760 elf/ldconfig.c:827
+#: elf/ldconfig.c:600 elf/ldconfig.c:759 elf/ldconfig.c:826
 #, c-format
 msgid "Cannot lstat %s"
 msgstr "Не могу да извршим „lstat“ за „%s“"
 
-#: elf/ldconfig.c:607
+#: elf/ldconfig.c:606
 #, c-format
 msgid "Ignored file %s since it is not a regular file."
 msgstr "Датотека „%s“ је занемарена јер није обична датотека."
 
-#: elf/ldconfig.c:615
+#: elf/ldconfig.c:614
 #, c-format
 msgid "No link created since soname could not be found for %s"
 msgstr "Није направљена ниједна веза јер не могу да нађем „soname“ за „%s“"
 
-#: elf/ldconfig.c:701
+#: elf/ldconfig.c:700
 #, c-format
 msgid " (from %s:%d)\n"
 msgstr " (од %s:%d)\n"
 
-#: elf/ldconfig.c:716
+#: elf/ldconfig.c:715
 #, c-format
 msgid "Can't open directory %s"
 msgstr "Не могу да отворим директоријум „%s“"
 
-#: elf/ldconfig.c:743 elf/ldconfig.c:748
+#: elf/ldconfig.c:742 elf/ldconfig.c:747
 #, c-format
 msgid "Could not form library path"
 msgstr "Не могу да направим путању библиотеке"
 
-#: elf/ldconfig.c:777 elf/ldconfig.c:815 elf/readlib.c:81
+#: elf/ldconfig.c:776 elf/ldconfig.c:814 elf/readlib.c:81
 #, c-format
 msgid "Input file %s not found.\n"
 msgstr "Нисам нашао улазну датотеку „%s“.\n"
 
-#: elf/ldconfig.c:784
+#: elf/ldconfig.c:783
 #, c-format
 msgid "Cannot stat %s"
 msgstr "Не могу да добавим податке за „%s“"
 
-#: elf/ldconfig.c:903
+#: elf/ldconfig.c:902
 #, c-format
 msgid "libc6 library %s in wrong directory"
 msgstr "„libc6“ библиотека „%s“ је у погрешном директоријуму"
 
-#: elf/ldconfig.c:922
+#: elf/ldconfig.c:921
 #, c-format
 msgid "libraries %s and %s in directory %s have same soname but different type."
 msgstr "библиотека „%s“ и „%s“ у директоријуму „%s“ имају исти „soname“ али различите врсте."
 
-#: elf/ldconfig.c:1051
+#: elf/ldconfig.c:1050
 #, c-format
 msgid "Warning: ignoring configuration file that cannot be opened: %s"
 msgstr "Упозорење: занемарујем датотеку подешавања која се не може отворити: %s"
 
-#: elf/ldconfig.c:1099
+#: elf/ldconfig.c:1098
 #, c-format
 msgid "%s:%u: hwcap directive ignored"
 msgstr "%s:%u: „hwcap“ директива је занемарена"
 
-#: elf/ldconfig.c:1118
+#: elf/ldconfig.c:1117
 #, c-format
 msgid "need absolute file name for configuration file when using -r"
 msgstr "потребан је апсолутни назив датотеке за датотеку подешавања када се користи „-r“"
 
-#: elf/ldconfig.c:1125 locale/programs/xasprintf.c:31
+#: elf/ldconfig.c:1124 locale/programs/xasprintf.c:31
 #: locale/programs/xmalloc.c:63 malloc/obstack.c:416 malloc/obstack.c:418
 #: posix/getconf.c:460 posix/getconf.c:699
 #, c-format
 msgid "memory exhausted"
 msgstr "меморија је потрошена"
 
-#: elf/ldconfig.c:1158
+#: elf/ldconfig.c:1157
 #, c-format
 msgid "%s:%u: cannot read directory %s"
 msgstr "%s:%u: не могу да читам директоријум „%s“"
 
-#: elf/ldconfig.c:1196
+#: elf/ldconfig.c:1195
 #, c-format
 msgid "relative path `%s' used to build cache"
 msgstr "релативна путања „%s“ је коришћена за градњу оставе"
 
-#: elf/ldconfig.c:1218
+#: elf/ldconfig.c:1217
 #, c-format
 msgid "Can't chdir to /"
 msgstr "Не могу да се пребацим у директоријум /"
 
-#: elf/ldconfig.c:1259
+#: elf/ldconfig.c:1258
 #, c-format
 msgid "Can't open cache file directory %s\n"
 msgstr "Не могу да отворим директоријум датотеке оставе „%s“\n"
@@ -1283,82 +1279,82 @@ msgstr "ДЕЉЕНИ_ОБЈЕКАТ [ПОДАЦИ_ПРОФИЛИСАЊА]"
 msgid "failed to load shared object `%s'"
 msgstr "нисам успео да учитам дељени објекат „%s“"
 
-#: elf/sprof.c:441 elf/sprof.c:824 elf/sprof.c:922
+#: elf/sprof.c:441 elf/sprof.c:821 elf/sprof.c:919
 #, c-format
 msgid "cannot create internal descriptor"
 msgstr "не могу да направим унутрашњег описника"
 
-#: elf/sprof.c:553
+#: elf/sprof.c:550
 #, c-format
 msgid "Reopening shared object `%s' failed"
 msgstr "Поновно отварање дељеног објекта „%s“ није успело"
 
-#: elf/sprof.c:560 elf/sprof.c:655
+#: elf/sprof.c:557 elf/sprof.c:652
 #, c-format
 msgid "reading of section headers failed"
 msgstr "нисам успео да прочитам заглавља одељка"
 
-#: elf/sprof.c:568 elf/sprof.c:663
+#: elf/sprof.c:565 elf/sprof.c:660
 #, c-format
 msgid "reading of section header string table failed"
 msgstr "нисам успео да прочитам табелу ниске заглавља одељка"
 
-#: elf/sprof.c:594
+#: elf/sprof.c:591
 #, c-format
 msgid "*** Cannot read debuginfo file name: %m\n"
 msgstr "*** Не могу да прочитам назив датотеке података прочишћавања: %m\n"
 
-#: elf/sprof.c:615
+#: elf/sprof.c:612
 #, c-format
 msgid "cannot determine file name"
 msgstr "не могу да одредим назив датотеке"
 
-#: elf/sprof.c:648
+#: elf/sprof.c:645
 #, c-format
 msgid "reading of ELF header failed"
 msgstr "нисам успео да прочитам ЕЛФ заглавље"
 
-#: elf/sprof.c:684
+#: elf/sprof.c:681
 #, c-format
 msgid "*** The file `%s' is stripped: no detailed analysis possible\n"
 msgstr "*** Датотека „%s“ је растављена: детаљна анализа није могућа\n"
 
-#: elf/sprof.c:714
+#: elf/sprof.c:711
 #, c-format
 msgid "failed to load symbol data"
 msgstr "нисам успео да учитам податке симбола"
 
-#: elf/sprof.c:779
+#: elf/sprof.c:776
 #, c-format
 msgid "cannot load profiling data"
 msgstr "не могу да учитам податке профилисања"
 
-#: elf/sprof.c:788
+#: elf/sprof.c:785
 #, c-format
 msgid "while stat'ing profiling data file"
 msgstr "приликом добављања података датотеке података профилисања"
 
-#: elf/sprof.c:796
+#: elf/sprof.c:793
 #, c-format
 msgid "profiling data file `%s' does not match shared object `%s'"
 msgstr "датотека података профилисања „%s“ не одговара дељеном објекту „%s“"
 
-#: elf/sprof.c:807
+#: elf/sprof.c:804
 #, c-format
 msgid "failed to mmap the profiling data file"
 msgstr "нисам успео да м-мапирам датотеку података профилисања"
 
-#: elf/sprof.c:815
+#: elf/sprof.c:812
 #, c-format
 msgid "error while closing the profiling data file"
 msgstr "грешка приликом затварања датотеке података профилисања"
 
-#: elf/sprof.c:898
+#: elf/sprof.c:895
 #, c-format
 msgid "`%s' is no correct profile data file for `%s'"
 msgstr "„%s“ није одговарајућа датотека података профилисања за „%s“"
 
-#: elf/sprof.c:1079 elf/sprof.c:1137
+#: elf/sprof.c:1076 elf/sprof.c:1134
 #, c-format
 msgid "cannot allocate symbol data"
 msgstr "не могу да доделим податке симбола"
@@ -1378,12 +1374,12 @@ msgstr "Табела ниске има превише уноса"
 msgid "String table is too large"
 msgstr "Табела ниске је превелика"
 
-#: iconv/iconv_charmap.c:146 iconv/iconv_prog.c:427
+#: iconv/iconv_charmap.c:146 iconv/iconv_prog.c:426
 #, c-format
 msgid "cannot open output file"
 msgstr "не могу да отворим излазну датотеку"
 
-#: iconv/iconv_charmap.c:192 iconv/iconv_prog.c:290
+#: iconv/iconv_charmap.c:192
 #, c-format
 msgid "error while closing input `%s'"
 msgstr "грешка приликом затварања улаза „%s“"
@@ -1393,128 +1389,135 @@ msgstr "грешка приликом затварања улаза „%s“"
 msgid "illegal input sequence at position %zd"
 msgstr "неисправан улазни низ на положају %zd"
 
-#: iconv/iconv_charmap.c:462 iconv/iconv_prog.c:518
+#: iconv/iconv_charmap.c:462 iconv/iconv_prog.c:728
 #, c-format
 msgid "incomplete character or shift sequence at end of buffer"
 msgstr "непотпун низ знака или помака на крају међумеморије"
 
-#: iconv/iconv_charmap.c:507 iconv/iconv_charmap.c:543 iconv/iconv_prog.c:561
-#: iconv/iconv_prog.c:597
+#: iconv/iconv_charmap.c:507 iconv/iconv_charmap.c:543 iconv/iconv_prog.c:736
 #, c-format
 msgid "error while reading the input"
 msgstr "грешка приликом читања улаза"
 
-#: iconv/iconv_charmap.c:525 iconv/iconv_prog.c:579
+#: iconv/iconv_charmap.c:525
 #, c-format
 msgid "unable to allocate buffer for input"
 msgstr "не могу да доделим међумеморију за улаз"
 
-#: iconv/iconv_prog.c:59
+#: iconv/iconv_prog.c:60
 msgid "Input/Output format specification:"
 msgstr "Спецификација записа Улаза/Излаза:"
 
-#: iconv/iconv_prog.c:60
+#: iconv/iconv_prog.c:61
 msgid "encoding of original text"
 msgstr "кодирање изворног текста"
 
-#: iconv/iconv_prog.c:61
+#: iconv/iconv_prog.c:62
 msgid "encoding for output"
 msgstr "кодирање за излаз"
 
-#: iconv/iconv_prog.c:62
+#: iconv/iconv_prog.c:63
 msgid "Information:"
 msgstr "Подаци:"
 
-#: iconv/iconv_prog.c:63
+#: iconv/iconv_prog.c:64
 msgid "list all known coded character sets"
 msgstr "списак свих познатих скупова кодираних знакова"
 
-#: iconv/iconv_prog.c:64 locale/programs/localedef.c:123
+#: iconv/iconv_prog.c:65 locale/programs/localedef.c:123
 msgid "Output control:"
 msgstr "Управљање излазом:"
 
-#: iconv/iconv_prog.c:65
+#: iconv/iconv_prog.c:66
 msgid "omit invalid characters from output"
 msgstr "изоставља неисправне знаке из излаза"
 
-#: iconv/iconv_prog.c:66 iconv/iconvconfig.c:128
+#: iconv/iconv_prog.c:67 iconv/iconvconfig.c:128
 #: locale/programs/localedef.c:116 locale/programs/localedef.c:118
 #: locale/programs/localedef.c:120 locale/programs/localedef.c:149
 #: malloc/memusagestat.c:56
 msgid "FILE"
 msgstr "ДАТОТЕКА"
 
-#: iconv/iconv_prog.c:66
+#: iconv/iconv_prog.c:67
 msgid "output file"
 msgstr "излазна датотека"
 
-#: iconv/iconv_prog.c:67
+#: iconv/iconv_prog.c:68
 msgid "suppress warnings"
 msgstr "потискује упозорења"
 
-#: iconv/iconv_prog.c:68
+#: iconv/iconv_prog.c:69
 msgid "print progress information"
 msgstr "исписује податке о напредовању"
 
+#: iconv/iconv_prog.c:72
+msgid "BYTE-COUNT"
+msgstr "БРОЈ-БЈТОВА"
+
 #: iconv/iconv_prog.c:73
+msgid "size of in-memory scratch buffer"
+msgstr "величина урезане међумеморије у-меморији."
+
+#: iconv/iconv_prog.c:78
 msgid "Convert encoding of given files from one encoding to another."
 msgstr "Претвара кодирање датих датотека из једног кодирања у друго."
 
-#: iconv/iconv_prog.c:77
+#: iconv/iconv_prog.c:82
 msgid "[FILE...]"
 msgstr "[ДАТОТЕКА...]"
 
-#: iconv/iconv_prog.c:176 iconv/iconv_prog.c:238
+#: iconv/iconv_prog.c:189 iconv/iconv_prog.c:251
 #, c-format
 msgid "failed to start conversion processing"
 msgstr "нисам успео да почнем обрађивање претварања"
 
-#: iconv/iconv_prog.c:212
+#: iconv/iconv_prog.c:225
 #, c-format
 msgid "conversions from `%s' and to `%s' are not supported"
 msgstr "претварања из „%s“ и у „%s“ нису подржана"
 
-#: iconv/iconv_prog.c:217
+#: iconv/iconv_prog.c:230
 #, c-format
 msgid "conversion from `%s' is not supported"
 msgstr "претварање из „%s“ није подржано"
 
-#: iconv/iconv_prog.c:224
+#: iconv/iconv_prog.c:237
 #, c-format
 msgid "conversion to `%s' is not supported"
 msgstr "претварање у „%s“ није подржано"
 
-#: iconv/iconv_prog.c:228
+#: iconv/iconv_prog.c:241
 #, c-format
 msgid "conversion from `%s' to `%s' is not supported"
 msgstr "претварање из „%s“ у „%s“ није подржано"
 
-#: iconv/iconv_prog.c:336
+#: iconv/iconv_prog.c:349
 #, c-format
-msgid "error while closing output file"
-msgstr "грешка приликом затварања излазне датотеке"
+msgid "invalid buffer size: %s"
+msgstr "неисправна величина међумеморије: %s"
 
-#: iconv/iconv_prog.c:437
+#: iconv/iconv_prog.c:540
 #, c-format
 msgid "conversion stopped due to problem in writing the output"
 msgstr "претварање је заустављено услед проблема писања излаза"
 
-#: iconv/iconv_prog.c:514
+#: iconv/iconv_prog.c:686
 #, c-format
-msgid "illegal input sequence at position %ld"
-msgstr "неисправан улазни низ на положају %ld"
+msgid "illegal input sequence at position %lld"
+msgstr "неисправан улазни низ на положају %lld"
 
-#: iconv/iconv_prog.c:522
+#: iconv/iconv_prog.c:693
 #, c-format
 msgid "internal error (illegal descriptor)"
 msgstr "унутрашња грешка (неисправан описник)"
 
-#: iconv/iconv_prog.c:525
+#: iconv/iconv_prog.c:696
 #, c-format
 msgid "unknown iconv() error %d"
 msgstr "непозната „iconv()“ грешка %d"
 
-#: iconv/iconv_prog.c:768
+#: iconv/iconv_prog.c:909
 msgid ""
 "The following list contains all the coded character sets known.  This does\n"
 "not necessarily mean that all combinations of these names can be used for\n"
@@ -2849,7 +2852,7 @@ msgid "cannot resize archive file"
 msgstr "не могу да променим величину датотеке архиве"
 
 #: locale/programs/locarchive.c:188 locale/programs/locarchive.c:451
-#: locale/programs/locarchive.c:680
+#: locale/programs/locarchive.c:686
 #, c-format
 msgid "cannot map archive header"
 msgstr "не могу да мапирам заглавље архиве"
@@ -2908,64 +2911,64 @@ msgstr "не могу да добавим податке архиве језик
 msgid "cannot lock locale archive \"%s\""
 msgstr "не могу да закључам архиву језика „%s“"
 
-#: locale/programs/locarchive.c:654
+#: locale/programs/locarchive.c:657
 #, c-format
 msgid "cannot read archive header"
 msgstr "не могу да прочитам заглавље архиве"
 
-#: locale/programs/locarchive.c:661
+#: locale/programs/locarchive.c:665
 #, c-format
 msgid "bad magic value in archive header"
 msgstr "лоша вредност магије у заглављу архиве"
 
-#: locale/programs/locarchive.c:734
+#: locale/programs/locarchive.c:740
 #, c-format
 msgid "locale '%s' already exists"
 msgstr "језик „%s“ већ постоји"
 
-#: locale/programs/locarchive.c:1009 locale/programs/locarchive.c:1024
-#: locale/programs/locarchive.c:1036 locale/programs/locarchive.c:1048
+#: locale/programs/locarchive.c:1015 locale/programs/locarchive.c:1030
+#: locale/programs/locarchive.c:1042 locale/programs/locarchive.c:1054
 #: locale/programs/locfile.c:349
 #, c-format
 msgid "cannot add to locale archive"
 msgstr "не могу да додам у архиву језика"
 
-#: locale/programs/locarchive.c:1217
+#: locale/programs/locarchive.c:1223
 #, c-format
 msgid "locale alias file `%s' not found"
 msgstr "нисам нашао датотеку алијаса језика „%s“"
 
-#: locale/programs/locarchive.c:1365
+#: locale/programs/locarchive.c:1371
 #, c-format
 msgid "Adding %s\n"
 msgstr "Додајем „%s“\n"
 
-#: locale/programs/locarchive.c:1371
+#: locale/programs/locarchive.c:1377
 #, c-format
 msgid "stat of \"%s\" failed: %s: ignored"
 msgstr "добављање података за „%s“ није успело: %s: занемарено"
 
-#: locale/programs/locarchive.c:1377
+#: locale/programs/locarchive.c:1383
 #, c-format
 msgid "\"%s\" is no directory; ignored"
 msgstr "„%s“ није директоријум; занемарено"
 
-#: locale/programs/locarchive.c:1384
+#: locale/programs/locarchive.c:1390
 #, c-format
 msgid "cannot open directory \"%s\": %s: ignored"
 msgstr "не могу да отворим директоријум „%s“: %s: занемарено"
 
-#: locale/programs/locarchive.c:1452
+#: locale/programs/locarchive.c:1458
 #, c-format
 msgid "incomplete set of locale files in \"%s\""
 msgstr "непотпун скуп датотека језика у „%s“"
 
-#: locale/programs/locarchive.c:1516
+#: locale/programs/locarchive.c:1522
 #, c-format
 msgid "cannot read all files in \"%s\": ignored"
 msgstr "не могу да прочитам све датотеке у „%s“: занемарено"
 
-#: locale/programs/locarchive.c:1586
+#: locale/programs/locarchive.c:1592
 #, c-format
 msgid "locale \"%s\" not in archive"
 msgstr "језик „%s“ није у архиви"
@@ -5148,7 +5151,7 @@ msgstr "Непознати сигнал %d\n"
 msgid "%s%sUnknown signal %d\n"
 msgstr "%s%sНепознати сигнал %d\n"
 
-#: stdio-common/psignal.c:44
+#: stdio-common/psignal.c:44 string/strsignal.c:57
 msgid "Unknown signal"
 msgstr "Непознати сигнал"
 
@@ -5156,12 +5159,12 @@ msgstr "Непознати сигнал"
 msgid "Unknown error "
 msgstr "Непозната грешка "
 
-#: string/strsignal.c:39
+#: string/strsignal.c:42
 #, c-format
 msgid "Real-time signal %d"
 msgstr "Сигнал у стварном времену %d"
 
-#: string/strsignal.c:43
+#: string/strsignal.c:46
 #, c-format
 msgid "Unknown signal %d"
 msgstr "Непознати сигнал %d"
@@ -6416,9 +6419,25 @@ msgstr "?"
 msgid "RPC program not available"
 msgstr "„RPC“ програм није доступан"
 
+#: sysdeps/hppa/dl-fptr.c:96
+msgid "cannot map pages for fdesc table"
+msgstr "не могу да мапирам странице за „fdesc“ табелу"
+
+#: sysdeps/hppa/dl-fptr.c:214
+msgid "cannot map pages for fptr table"
+msgstr "не могу да мапирам странице за „fptr“ табелу"
+
+#: sysdeps/hppa/dl-fptr.c:243
+msgid "internal error: symidx out of range of fptr table"
+msgstr "унутрашња грешка: „symidx“ је ван опсега „fptr“ табеле"
+
 #: sysdeps/mach/_strerror.c:43 sysdeps/mach/xpg-strerror.c:55
 msgid "Error in unknown error system: "
 msgstr "Грешка у непознатом систему грешке: "
+
+#: sysdeps/mach/xpg-strerror.c:66 sysdeps/mach/xpg-strerror.c:74
+msgid "Unknown error code: "
+msgstr "Непознат ко̑д грешке: "
 
 #: sysdeps/posix/gai_strerror-strs.h:2
 msgid "Address family for hostname not supported"
@@ -6517,6 +6536,26 @@ msgstr "не могу да искључим „IBT“"
 msgid "can't disable SHSTK"
 msgstr "не могу да искључим „SHSTK“"
 
+#: timezone/zdump.c:131
+#, c-format
+msgid "%s: size overflow\n"
+msgstr "%s: прекорачење величине\n"
+
+#: timezone/zdump.c:170
+#, c-format
+msgid "%s: Memory exhausted\n"
+msgstr "%s: Меморија је потрошена\n"
+
+#: timezone/zdump.c:257
+#, c-format
+msgid "%s: setenv: %s\n"
+msgstr "%s: постављам окружење: %s\n"
+
+#: timezone/zdump.c:337 timezone/zdump.c:604
+#, c-format
+msgid "%s: unknown timezone '%s': %s\n"
+msgstr "%s: непозната временска зона „%s“: %s\n"
+
 #: timezone/zdump.c:402
 msgid "has characters other than ASCII alphanumerics, '-' or '+'"
 msgstr "има друге знакове осим АСКРИ алфанумеричке, - или +"
@@ -6571,6 +6610,16 @@ msgstr "%s: дивљи „-c“ аргумент %s\n"
 msgid "%s: wild -t argument %s\n"
 msgstr "%s: дивљи „-t“ аргумент %s\n"
 
+#: timezone/zdump.c:857
+#, c-format
+msgid " (gmtime failed)"
+msgstr " („gmtime“ није успело)"
+
+#: timezone/zdump.c:867
+#, c-format
+msgid " (localtime failed)"
+msgstr " („localtime“ није успело)"
+
 #: timezone/zic.c:463
 #, c-format
 msgid "%s: Memory exhausted: %s\n"
@@ -6607,10 +6656,49 @@ msgstr " (правило из „%s“, ред %<PRIdMAX>)"
 msgid "warning: "
 msgstr "упозорење: "
 
+#: timezone/zic.c:669
+#, c-format
+msgid ""
+"%s: usage is %s [ --version ] [ --help ] [ -v ] \\\n"
+"\t[ -b {slim|fat} ] [ -d directory ] [ -l localtime ] [ -L leapseconds ] \\\n"
+"\t[ -p posixrules ] [ -r '[@lo][/@hi]' ] [ -R '@hi' ] \\\n"
+"\t[ -t localtime-link ] \\\n"
+"\t[ filename ... ]\n"
+"\n"
+"Report bugs to %s.\n"
+msgstr ""
+"%s: коришћење је %s [ --version ] [ --help ] [ -v ] \\\n"
+"\t[ -b {slim|fat} ] [ -d директоријум ] [ -l локално_време ] [ -L секунде_преступа ] \\\n"
+"\t[ -p посикс_правила ] [ -r '[@lo][/@hi]' ] [ -R '@hi' ] \\\n"
+"\t[ -t веза-локалног_времена ] \\\n"
+"\t[ назив_датотеке ... ]\n"
+"\n"
+"Грешке пријавите на „%s“.\n"
+
 #: timezone/zic.c:695
 #, c-format
 msgid "%s: Can't chdir to %s: %s\n"
 msgstr "%s: Не могу да променим директоријум у „%s“: %s\n"
+
+#: timezone/zic.c:786
+#, c-format
+msgid "\"Link %s %s\" is part of a link cycle"
+msgstr "„Веза %s %s“ је део циклуса везе"
+
+#: timezone/zic.c:797
+#, c-format
+msgid "link %s targets itself"
+msgstr "веза „%s“ циља на себе"
+
+#: timezone/zic.c:817
+#, c-format
+msgid "link %s targeting link %s mishandled by pre-2023 zic"
+msgstr "пре-2023 zic је лоше одрадио везу „%s“ која циља на везу „%s“"
+
+#: timezone/zic.c:821
+#, c-format
+msgid "link %s targeting link %s"
+msgstr "веза „%s“ циља на везу „%s“"
 
 #: timezone/zic.c:992
 msgid "wild compilation-time specification of zic_t"
@@ -6645,6 +6733,10 @@ msgstr "%s: Наведено је више од једне „-p“ опције
 msgid "%s: More than one -t option specified\n"
 msgstr "%s: Наведено је више од једне „-t“ опције\n"
 
+#: timezone/zic.c:1064
+msgid "-y ignored"
+msgstr "„-y“ је занемарено"
+
 #: timezone/zic.c:1071
 #, c-format
 msgid "%s: More than one -L option specified\n"
@@ -6660,9 +6752,19 @@ msgstr "%s: Наведено је више од једне „-r“ опције
 msgid "%s: invalid time range: %s\n"
 msgstr "%s: неисправан временски опсег: %s\n"
 
+#: timezone/zic.c:1098
+#, c-format
+msgid "%s: invalid time: %s\n"
+msgstr "%s: неисправно време: %s\n"
+
 #: timezone/zic.c:1104
 msgid "-s ignored"
 msgstr "„-s“ је занемарено"
+
+#: timezone/zic.c:1110
+#, c-format
+msgid "%s: -R time exceeds -r cutoff\n"
+msgstr "%s: „-R time“ премашује „-r cutoff“\n"
 
 #: timezone/zic.c:1171
 msgid "empty file name"
@@ -6703,10 +6805,20 @@ msgstr "назив датотеке „%s“ садржи бајт „\\%o“"
 msgid "%s: Can't create %s/%s: %s\n"
 msgstr "%s: Не могу да направим „%s/%s“: %s\n"
 
+#: timezone/zic.c:1388
+#, c-format
+msgid "%s: rename to %s/%s: %s\n"
+msgstr "%s: преименујем у „%s/%s“: %s\n"
+
 #: timezone/zic.c:1463
 #, c-format
 msgid "%s: Can't remove %s/%s: %s\n"
 msgstr "%s: Не могу да уклоним „%s/%s“: %s\n"
+
+#: timezone/zic.c:1507
+#, c-format
+msgid "%s: Can't link %s/%s to %s/%s: %s\n"
+msgstr "%s: Не могу да вежем „%s/%s“ на „%s/%s“: %s\n"
 
 #: timezone/zic.c:1536
 #, c-format
@@ -6737,6 +6849,18 @@ msgstr "исти назив правила у више датотека"
 msgid "%s in ruleless zone"
 msgstr "„%s“ у зони без правила"
 
+#: timezone/zic.c:1674
+msgid "input error"
+msgstr "грешка улаза"
+
+#: timezone/zic.c:1679
+msgid "unterminated line"
+msgstr "неокончан ред"
+
+#: timezone/zic.c:1683
+msgid "NUL input byte"
+msgstr "ПРАЗАН бајт улаза"
+
 #: timezone/zic.c:1688
 msgid "line too long"
 msgstr "ред је предуг"
@@ -6758,13 +6882,13 @@ msgstr "нисам нашао очекивани ред настављања"
 msgid "fractional seconds rejected by pre-2018 versions of zic"
 msgstr "разломачке секунде су одбацила пре-2018 издања „zic“-а"
 
-#: timezone/zic.c:1815 timezone/zic.c:3761
+#: timezone/zic.c:1815 timezone/zic.c:3760
 msgid "time overflow"
 msgstr "прекорачење времена"
 
 #: timezone/zic.c:1821
 msgid "values over 24 hours not handled by pre-2007 versions of zic"
-msgstr "вредностима од преко 24 часова не могу да раде издања „zic“-а од пре 2007."
+msgstr "вредностима преко 24 часова не могу да раде пре-2007 издања „zic“-а"
 
 #: timezone/zic.c:1839
 msgid "invalid saved time"
@@ -6871,6 +6995,15 @@ msgstr "више редова Истиче"
 msgid "wrong number of fields on Link line"
 msgstr "погрешан број поља у реду Веза"
 
+#: timezone/zic.c:2129
+msgid "blank TARGET field on Link line"
+msgstr "празно поље МЕТЕ у реду Везе"
+
+#: timezone/zic.c:2192
+#, c-format
+msgid "FROM year \"%s\" is obsolete; treated as %d"
+msgstr "ОД године „%s“ је застарело; сматра се као %d"
+
 #: timezone/zic.c:2199
 msgid "invalid starting year"
 msgstr "неисправна почетна година"
@@ -6882,6 +7015,11 @@ msgstr "неисправна завршна година"
 #: timezone/zic.c:2218
 msgid "starting year greater than ending year"
 msgstr "почетна година је већа од завршне године"
+
+#: timezone/zic.c:2222
+#, c-format
+msgid "year type \"%s\" is unsupported; use \"-\" instead"
+msgstr "врста године „%s“ није подржана; зато користите „-“"
 
 #: timezone/zic.c:2257
 msgid "invalid weekday name"
@@ -6896,6 +7034,16 @@ msgstr "клијенти упуте су промашени више од %d п�
 msgid "pre-2014 clients may mishandle more than 1200 transition times"
 msgstr "пре-2014 клијенти могу промашити више од 1200 пута прелаза"
 
+#: timezone/zic.c:2480
+#, c-format
+msgid "%s: pre-2021b clients may mishandle leap second expiry"
+msgstr "%s: пре-2021b клијенти могу промашити истек секунде преступа"
+
+#: timezone/zic.c:2488
+#, c-format
+msgid "%s: pre-2021b clients may mishandle leap second table truncation"
+msgstr "%s: пре-2021b клијенти могу промашити скраћење табеле секунде преступа"
+
 #: timezone/zic.c:2537
 msgid "too many transition times"
 msgstr "превише времена прелаза"
@@ -6905,78 +7053,90 @@ msgstr "превише времена прелаза"
 msgid "%%z UT offset magnitude exceeds 99:59:59"
 msgstr "%%z „UT“ магнитуда помераја премашује 99:59:59"
 
-#: timezone/zic.c:3187
+#: timezone/zic.c:3180
+msgid "no proleptic TZ string for zone"
+msgstr "нема преурањене TZ ниске за зону"
+
+#: timezone/zic.c:3186
 #, c-format
 msgid "%s: pre-%d clients may mishandle distant timestamps"
 msgstr "%s: пре-%d клијенти могу промашити далеке временске ознаке"
 
-#: timezone/zic.c:3316
+#: timezone/zic.c:3315
 msgid "two rules for same instant"
 msgstr "два правила за исти тренутак"
 
-#: timezone/zic.c:3389
+#: timezone/zic.c:3388
 msgid "can't determine time zone abbreviation to use just after until time"
 msgstr "не могу да одредим скраћеницу временске зоне за коришћење одмах након „до“ времена"
 
-#: timezone/zic.c:3490
+#: timezone/zic.c:3489
 msgid "UT offset out of range"
 msgstr "„UT“ померај је ван опсега"
 
-#: timezone/zic.c:3513
+#: timezone/zic.c:3512
 msgid "too many local time types"
 msgstr "превише врсти локалног времена"
 
-#: timezone/zic.c:3531
+#: timezone/zic.c:3530
 msgid "too many leap seconds"
 msgstr "превише секунди преступа"
 
-#: timezone/zic.c:3562
-msgid "Leap seconds too close together"
-msgstr "секунде преступа су превише близу"
+#: timezone/zic.c:3534
+msgid "Rolling leap seconds not supported with -r"
+msgstr "Покретне секунде преступа нису подржане са „-r“"
 
-#: timezone/zic.c:3573
+#: timezone/zic.c:3561
+msgid "Leap seconds too close together"
+msgstr "Секунде преступа су превише близу"
+
+#: timezone/zic.c:3572
 msgid "last Leap time does not precede Expires time"
 msgstr "последње време преступа не претходи времену истека"
 
-#: timezone/zic.c:3680
+#: timezone/zic.c:3679
 #, c-format
 msgid "\"%s\" is undocumented; use \"last%s\" instead"
 msgstr "„%s“ није документовано; зато користите „last%s“"
 
-#: timezone/zic.c:3711
+#: timezone/zic.c:3710
 #, c-format
 msgid "\"%s\" is ambiguous in pre-2017c zic"
 msgstr "„%s“ је нејасно у „pre-2017c zic“-у"
 
-#: timezone/zic.c:3742
+#: timezone/zic.c:3741
 msgid "Odd number of quotation marks"
 msgstr "Непаран број знакова наводника"
 
-#: timezone/zic.c:3839
+#: timezone/zic.c:3749
+msgid "Too many input fields"
+msgstr "Превише улазних поља"
+
+#: timezone/zic.c:3838
 msgid "use of 2/29 in non leap-year"
 msgstr "коришћење 29.02. у непреступној години"
 
-#: timezone/zic.c:3865
+#: timezone/zic.c:3864
 msgid "rule goes past start/end of month; will not work with pre-2004 versions of zic"
 msgstr "правило иде кроз почетак/крај месеца; неће радити са пре--2004 издањима „zic“-а"
 
-#: timezone/zic.c:3892
+#: timezone/zic.c:3891
 msgid "time zone abbreviation has fewer than 3 characters"
 msgstr "скраћеница временске зоне има мање од 3 знака"
 
-#: timezone/zic.c:3894
+#: timezone/zic.c:3893
 msgid "time zone abbreviation has too many characters"
 msgstr "скраћеница временске зоне има превише знакова"
 
-#: timezone/zic.c:3896
+#: timezone/zic.c:3895
 msgid "time zone abbreviation differs from POSIX standard"
 msgstr "скраћеница временске зоне се разликује од ПОСИКС стандарда"
 
-#: timezone/zic.c:3902
+#: timezone/zic.c:3901
 msgid "too many, or too long, time zone abbreviations"
 msgstr "превише, или су прекратке, скраћенице временске зоне"
 
-#: timezone/zic.c:3953
+#: timezone/zic.c:3952
 #, c-format
 msgid "%s: Can't create directory %s: %s"
 msgstr "%s: Не могу да направим директоријум „%s“: %s"

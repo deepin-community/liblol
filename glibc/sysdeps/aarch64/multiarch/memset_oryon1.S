@@ -1,5 +1,5 @@
 /* Optimized memset for Qualcomm's oyron-1 core.
-   Copyright (C) 2018-2024 Free Software Foundation, Inc.
+   Copyright (C) 2018-2025 Free Software Foundation, Inc.
    Copyright The GNU Toolchain Authors.
 
    This file is part of the GNU C Library.
@@ -19,16 +19,19 @@
    <https://www.gnu.org/licenses/>.  */
 
 #include <sysdep.h>
-#include "memset-reg.h"
 
 /* Assumptions:
    ARMv8-a, AArch64, unaligned accesses
  */
 
-ENTRY (__memset_oryon1)
+#define dstin	x0
+#define val	x1
+#define valw	w1
+#define count	x2
+#define dst	x3
+#define dstend	x4
 
-	PTR_ARG (0)
-	SIZE_ARG (2)
+ENTRY (__memset_oryon1)
 
 	bfi	valw, valw, 8, 8
 	bfi	valw, valw, 16, 16

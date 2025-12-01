@@ -1,4 +1,4 @@
-/* Copyright (C) 2004-2024 Free Software Foundation, Inc.
+/* Copyright (C) 2004-2025 Free Software Foundation, Inc.
    Copyright The GNU Toolchain Authors.
    This file is part of the GNU C Library.
 
@@ -23,6 +23,7 @@
 
 #include <assert.h>
 #include <fcntl.h>
+#include <arpa/inet.h>
 #include <limits.h>
 #include <locale.h>
 #include <obstack.h>
@@ -90,7 +91,7 @@ do_prepare (int argc, char *argv[])
 
 static volatile int chk_fail_ok;
 static volatile int ret;
-static jmp_buf chk_fail_buf;
+static sigjmp_buf chk_fail_buf;
 
 static void
 handler (int sig)
@@ -133,7 +134,7 @@ static int num2 = 987654;
   do { printf ("Failure on line %d\n", __LINE__); ret = 1; } while (0)
 #define CHK_FAIL_START \
   chk_fail_ok = 1;				\
-  if (! setjmp (chk_fail_buf))			\
+  if (! sigsetjmp (chk_fail_buf, 1))		\
     {
 #define CHK_FAIL_END \
       chk_fail_ok = 0;				\
@@ -1830,6 +1831,50 @@ do_test (void)
   ppoll (fds, l0 + 2, NULL, NULL);
   CHK_FAIL_END
 # endif
+#endif
+
+  struct in6_addr addr6 = {};
+  struct in_addr addr = {};
+  char addrstr6[INET6_ADDRSTRLEN];
+  char addrstr[INET_ADDRSTRLEN];
+
+  if (inet_ntop (AF_INET6, &addr6, addrstr6, sizeof (addrstr6)) == NULL)
+    FAIL ();
+  if (inet_ntop (AF_INET, &addr, addrstr, sizeof (addrstr)) == NULL)
+    FAIL ();
+
+#if __USE_FORTIFY_LEVEL >= 1
+  CHK_FAIL_START
+  inet_ntop (AF_INET6, &addr6, buf, INET6_ADDRSTRLEN);
+  CHK_FAIL_END
+
+  CHK_FAIL_START
+  inet_ntop (AF_INET, &addr, buf, INET_ADDRSTRLEN);
+  CHK_FAIL_END
+#endif
+
+  const char *ipv4str = "127.0.0.1";
+  const char *ipv6str = "::1";
+
+  if (inet_pton (AF_INET, ipv4str, (void *) &addr) != 1)
+    FAIL ();
+  if (inet_pton (AF_INET6, ipv6str, (void *) &addr6) != 1)
+    FAIL ();
+
+#if __USE_FORTIFY_LEVEL >= 1
+  char smallbuf[2];
+
+  CHK_FAIL_START
+  inet_pton (AF_INET, ipv4str, (void *) smallbuf);
+  CHK_FAIL_END
+
+  CHK_FAIL_START
+  inet_pton (AF_INET6, ipv6str, (void *) smallbuf);
+  CHK_FAIL_END
+
+  CHK_FAIL_START
+  inet_pton (AF_INET6, ipv6str, (void *) &addr);
+  CHK_FAIL_END
 #endif
 
   return ret;

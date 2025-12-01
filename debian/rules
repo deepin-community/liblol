@@ -3,9 +3,9 @@
 
 include /usr/share/dpkg/pkg-info.mk
 
-glibc-ver := 2.40
+glibc-ver := 2.42
 patchelf-ver := 0.18.0
-libxcrypt-ver := 4.4.36
+libxcrypt-ver := 4.5.2
 
 SUBSTVARS += -VglibcVer="$(glibc-ver)" -VlibxcryptVer="$(libxcrypt-ver)"
 
@@ -19,18 +19,24 @@ DEB_HOST_GNU_TYPE := $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 DEB_HOST_MULTIARCH := $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 lol_target_gnu_type := loongarch64-debian-linux-gnuow
 
-build_cflags := -pipe $(shell dpkg-buildflags --get CFLAGS_FOR_BUILD) $(shell dpkg-buildflags --get CPPFLAGS_FOR_BUILD)
-build_cxxflags := -pipe $(shell dpkg-buildflags --get CXXFLAGS_FOR_BUILD) $(shell dpkg-buildflags --get CPPFLAGS_FOR_BUILD)
-build_ldflags := $(shell dpkg-buildflags --get LDFLAGS_FOR_BUILD)
-host_cflags := -pipe $(shell dpkg-buildflags --get CFLAGS) $(shell dpkg-buildflags --get CPPFLAGS)
-host_ldflags := $(shell dpkg-buildflags --get LDFLAGS)
+# FIXME: glibc will fail to build if the compiler passes -D_FORTIFY_SOURCE
+# in addition to that passed by the build system.
+#
+# https://sourceware.org/bugzilla/show_bug.cgi?id=31928
+#
+# The relevant flags are added back for patchelf and libxcrypt by
+# overriding CPPFLAGS in their configuration options.
+DEB_BUILD_MAINT_OPTIONS=hardening=+all,-fortify
+
+DEB_EXPORT_BUILDFLAGS=1
+include /usr/share/dpkg/buildflags.mk
 
 ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 NJOBS := -j $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 endif
 
 BASE_CC = gcc
-DEB_GCC_VERSION = -12
+DEB_GCC_VERSION = -15
 
 CC = $(DEB_HOST_GNU_TYPE)-$(BASE_CC)$(DEB_GCC_VERSION)
 BUILD_CC = $(DEB_BUILD_GNU_TYPE)-$(BASE_CC)
@@ -76,8 +82,7 @@ config-libxcrypt config-libxcrypt-normal: autoreconf
 	  --disable-xcrypt-compat-files \
 	  --enable-obsolete-api=glibc \
 	  --libdir=/usr/lib/$(DEB_HOST_MULTIARCH) \
-	  CFLAGS='$(host_cflags)' \
-	  LDFLAGS='$(host_ldflags)'
+	  CPPFLAGS='$(shell DEB_BUILD_MAINT_OPTIONS=hardening=+all dpkg-buildflags --get CPPFLAGS)'
 
 patchelf_build_dir := debian/build-dir/patchelf
 
@@ -87,9 +92,7 @@ config-patchelf: patch-src.patchelf autoreconf
 	$(CURDIR)/patchelf/configure \
 	  --build=$(DEB_BUILD_GNU_TYPE) \
 	  --host=$(DEB_BUILD_GNU_TYPE) \
-	  CFLAGS='$(build_cflags)' \
-	  CXXFLAGS='$(build_cxxflags)' \
-	  LDFLAGS='$(build_ldflags)'
+	  CPPFLAGS='$(shell DEB_BUILD_MAINT_OPTIONS=hardening=+all dpkg-buildflags --get CPPFLAGS)'
 
 autoreconf: patch-src
 	dh_autoreconf autoreconf -- -f -i patchelf/ libxcrypt/
@@ -99,10 +102,6 @@ config-glibc: patch-src.glibc
 	mkdir -p $(glibc_build_dir)
 	rm -rf $(glibc_build_dir)/configparms
 	echo "BUILD_CC = $(BUILD_CC)"             >> $(glibc_build_dir)/configparms
-	echo "CFLAGS = $(host_cflags)"            >> $(glibc_build_dir)/configparms
-	echo "ASFLAGS = $(host_cflags)"           >> $(glibc_build_dir)/configparms
-	echo "BUILD_CFLAGS = $(build_cflags)"     >> $(glibc_build_dir)/configparms
-	echo "LDFLAGS = "                         >> $(glibc_build_dir)/configparms
 	echo "BASH := /bin/bash"                  >> $(glibc_build_dir)/configparms
 	echo "KSH := /bin/bash"                   >> $(glibc_build_dir)/configparms
 	echo "SHELL := /bin/bash"                 >> $(glibc_build_dir)/configparms
@@ -183,14 +182,14 @@ $(addprefix $(glibc_build_dir)/,$(glibc_real_libs)): $(patchelf_bin)
 
 define patchelf_pthread
 $(patchelf_bin) \
-	--page-size "$$(( 16 * 1024 ))" \
+	--page-size "$$(( 64 * 1024 ))" \
 	--remap-symvers "GLIBC_2.27=GLIBC_2.0,GLIBC_2.2,GLIBC_2.2.1,GLIBC_2.2.2,GLIBC_2.2.3,GLIBC_2.2.4,GLIBC_2.2.6,GLIBC_2.3,GLIBC_2.3.2,GLIBC_2.3.3,GLIBC_2.3.4,GLIBC_2.4,GLIBC_2.5,GLIBC_2.6,GLIBC_2.7,GLIBC_2.8,GLIBC_2.9,GLIBC_2.10,GLIBC_2.11,GLIBC_2.12,GLIBC_2.13,GLIBC_2.14,GLIBC_2.15,GLIBC_2.16,GLIBC_2.17,GLIBC_2.18,GLIBC_2.19,GLIBC_2.20,GLIBC_2.21,GLIBC_2.22,GLIBC_2.23,GLIBC_2.24,GLIBC_2.25,GLIBC_2.26" \
 	--also-remap-verneed
 endef
 
 define patchelf_normal
 $(patchelf_bin) \
-	--page-size "$$(( 16 * 1024 ))" \
+	--page-size "$$(( 64 * 1024 ))" \
 	--remap-symvers "GLIBC_2.36=GLIBC_2.27,GLIBC_2.28" \
 	--also-remap-verneed
 endef
@@ -241,7 +240,7 @@ debian/build-dir/libxcrypt/.libs/libcrypt.so.1 debian/build-dir/libxcrypt-normal
 	$(if $(findstring normal, $@), , \
 	$(patchelf_normal) $@; \
 	$(patchelf_bin) \
-		--page-size "$$(( 16 * 1024 ))" \
+		--page-size "$$(( 64 * 1024 ))" \
 		--replace-needed "ld-linux-loongarch-lp64d.so.1" "ld.so.1" \
 		$@; \
 	)

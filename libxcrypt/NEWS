@@ -3,6 +3,40 @@ libxcrypt NEWS -- history of user-visible changes.
 Please send bug reports, questions and suggestions to
 <https://github.com/besser82/libxcrypt/issues>.
 
+Version 4.5.2
+* Use a more portable implementation for our fallback implementation
+  of explicit_bzero(); also get rid of the need for VLA in the new
+  implementation (issue #212).
+* Fix compilation of alg-sha1 with optimization level 3 for GCC v11
+  and newer (issue #179).
+
+Version 4.5.1
+* Do not include undefined symbols in version-script (issue #181, #213).
+* Fix build with clang-20+ on macOS (issue #216).
+
+Version 4.5.0
+* Implement the sm3crypt ($sm3$) hashing algorithm (issue #188).
+* Implement the sm3-yescrypt ($sm3y$) hashing algorithm (issue #206).
+* Fix the implementation of the crypt(3) functions and the crypt_gensalt(3)
+  functions to not overwrite the output buffer too early. (issue #209).
+* Fix the strcpy_or_abort() function to call abort() in -DNDEBUG builds.
+* Add some more testcases.
+* Several fixes for issues found by Coverity.
+
+Version 4.4.38
+* Fix several "-Wunterminated-string-initialization", which are seen by
+  upcoming GCC 15.x (issue #194).
+* Fix "-Wmaybe-uninitialized" in crypt.c, which is seen by GCC 13.3.0.
+* Skip test/explicit-bzero if compiling with ASAN.
+* Drop hard requirement for the pkg-config binary (issue #198).
+
+Version 4.4.37
+* Several fixes to the manpages (issue #185).
+* Add binary compatibility for x86_64 GNU/Hurd (issue #189).
+* Only test the needed makecontext signature during configure (issue #178).
+* Fix -Werror=strict-overflow in lib/crypt-bcrypt.c, which is seen
+  by GCC 4.8.5 (issue #197).
+
 Version 4.4.36
 * Fix left over bits failing with Perl v5.38.0 (issue #173).
 

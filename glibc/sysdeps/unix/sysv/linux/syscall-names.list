@@ -1,5 +1,5 @@
 # List of all known Linux system calls.
-# Copyright (C) 2017-2024 Free Software Foundation, Inc.
+# Copyright (C) 2017-2025 Free Software Foundation, Inc.
 # This file is part of the GNU C Library.
 #
 # The GNU C Library is free software; you can redistribute it and/or
@@ -21,8 +21,8 @@
 # This file can list all potential system calls.  The names are only
 # used if the installed kernel headers also provide them.
 
-# The list of system calls is current as of Linux 6.9.
-kernel 6.9
+# The list of system calls is current as of Linux 6.15.
+kernel 6.15
 
 FAST_atomic_update
 FAST_cmpxchg
@@ -198,6 +198,7 @@ getuid
 getuid32
 getunwind
 getxattr
+getxattrat
 getxgid
 getxpid
 getxuid
@@ -241,6 +242,7 @@ linkat
 listen
 listmount
 listxattr
+listxattrat
 llistxattr
 llseek
 lock
@@ -287,6 +289,7 @@ mq_timedsend
 mq_timedsend_time64
 mq_unlink
 mremap
+mseal
 msgctl
 msgget
 msgrcv
@@ -313,6 +316,7 @@ olduname
 open
 open_by_handle_at
 open_tree
+open_tree_attr
 openat
 openat2
 or1k_atomic
@@ -481,6 +485,7 @@ recvmmsg_time64
 recvmsg
 remap_file_pages
 removexattr
+removexattrat
 rename
 renameat
 renameat2
@@ -571,6 +576,7 @@ settimeofday
 setuid
 setuid32
 setxattr
+setxattrat
 sgetmask
 shmat
 shmctl
@@ -652,6 +658,7 @@ uname
 unlink
 unlinkat
 unshare
+uretprobe
 uselib
 userfaultfd
 usr26

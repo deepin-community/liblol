@@ -1,8 +1,31 @@
-liblol (0.1.6-1deepin1) unstable; urgency=medium
+liblol (0.1.10-1) unstable; urgency=medium
 
-  * Build with GCC 12.
+  * Bump glibc version to 2.42.
+  * Bump libxcrypt version to 4.5.2.
+  * Bump GCC version to 15.
 
- -- Mingcong Bai <baimingcong@uniontech.com>  Fri, 17 Jan 2025 10:49:59 +0800
+ -- Mingcong Bai <jeffbai@aosc.io>  Sat, 29 Nov 2025 19:44:20 +0800
+
+liblol (0.1.9-1) unstable; urgency=medium
+
+  * Bump glibc version to 2.41.
+  * Attempt to fix page size misalignment with Binutils >= 2.44.
+
+ -- Mingcong Bai <jeffbai@aosc.io>  Mon, 03 Mar 2025 13:38:42 +0800
+
+liblol (0.1.8-1) unstable; urgency=medium
+
+  * Release 0.1.8-1.
+  * Bump libxcrypt version to 4.4.38.
+
+ -- Mingcong Bai <jeffbai@aosc.io>  Thu, 23 Jan 2025 13:22:41 +0800
+
+liblol (0.1.7-1) unstable; urgency=medium
+
+  * Relase 0.1.7-1.
+  * Bump libxcrypt version to 4.4.37.
+
+ -- Mingcong Bai <jeffbai@aosc.io>  Thu, 23 Jan 2025 12:56:05 +0800
 
 liblol (0.1.6-1) unstable; urgency=medium
 
